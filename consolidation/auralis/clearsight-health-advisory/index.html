@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI-powered Health Advisory System for Delhi-NCR providing personalized health recommendations based on real-time air quality data">
+    <title>Delhi-NCR Health Advisory | AI-Powered AQI Health Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🏥</span>
+                    Delhi-NCR Health Advisory
+                </h1>
+                <p class="tagline">AI-Powered Personalized Health Recommendations</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Medical Disclaimer -->
+            <div class="disclaimer-banner">
+                <div class="disclaimer-icon">⚠️</div>
+                <div class="disclaimer-text">
+                    <strong>Medical Disclaimer:</strong> This system provides general health advice based on air quality
+                    data.
+                    It is not a substitute for professional medical consultation. Seek immediate medical attention for
+                    severe symptoms.
+                </div>
+            </div>
+
+            <!-- Step 1: Location Input -->
+            <section id="location-section" class="section active">
+                <div class="section-header">
+                    <h2>Step 1: Your Location</h2>
+                    <p>Select how you want to provide your location</p>
+                </div>
+
+                <div class="card location-card">
+                    <!-- Location Mode Tabs -->
+                    <div class="location-tabs">
+                        <button class="tab-btn active" data-tab="auto">
+                            <span>📍</span> Auto
+                        </button>
+                        <button class="tab-btn" data-tab="map">
+                            <span>🗺️</span> Map
+                        </button>
+                        <button class="tab-btn" data-tab="pincode">
+                            <span>📮</span> Pincode
+                        </button>
+                        <button class="tab-btn" data-tab="manual">
+                            <span>🔢</span> Manual
+                        </button>
+                    </div>
+
+                    <!-- Tab Contents -->
+                    <div class="tab-content" id="tab-auto">
+                        <div class="center-content">
+                            <button id="auto-detect-btn" class="btn btn-primary large-btn">
+                                <span class="btn-icon">📍</span>
+                                Auto-Detect My Location
+                            </button>
+                            <p class="helper-text">Best for mobile users onsite.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-content hidden" id="tab-map">
+                        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                            <input type="text" id="station-search-input" class="input"
+                                placeholder="Search Delhi NCR Station (e.g. ITO, Mandir Marg)..."
+                                style="flex:1; min-width: 200px;">
+                            <button id="station-search-btn" class="btn btn-primary">Find</button>
+                        </div>
+                        <div class="map-wrapper">
+                            <div id="leaflet-map" style="height: 350px; width: 100%; border-radius: 8px; z-index: 1;">
+                            </div>
+                        </div>
+                        <p class="helper-text center-text">Search for a station or tap anywhere on the map.</p>
+                    </div>
+
+                    <div class="tab-content hidden" id="tab-pincode">
+                        <div class="form-group center-content">
+                            <label for="pincode-input">Enter Indian Pincode</label>
+                            <div class="input-group">
+                                <input type="text" id="pincode-input" placeholder="e.g. 110001" maxlength="6"
+                                    class="input">
+                                <button id="pincode-search-btn" class="btn btn-primary">Search</button>
+                            </div>
+                            <p class="helper-text">Finds coordinates via OpenStreetMap.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-content hidden" id="tab-manual">
+                        <div class="manual-location">
+                            <div class="form-group">
+                                <label for="latitude">Latitude</label>
+                                <input type="number" id="latitude" step="0.0001" placeholder="28.6139" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="longitude">Longitude</label>
+                                <input type="number" id="longitude" step="0.0001" placeholder="77.2090" class="input">
+                            </div>
+                            <button id="manual-location-btn" class="btn btn-secondary">
+                                Fetch AQI Data
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="location-status" class="status-message"></div>
+                </div>
+            </section>
+
+            <!-- Step 2: Health Profile -->
+            <section id="health-profile-section" class="section">
+                <div class="section-header">
+                    <h2>Step 2: Your Health Profile</h2>
+                    <p>Help us personalize recommendations for your health needs</p>
+                </div>
+
+                <div class="card health-profile-card">
+                    <form id="health-profile-form">
+                        <!-- Basic Information -->
+                        <div class="form-section">
+                            <h3>Basic Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" min="1" max="120" required class="input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" required class="input">
+                                        <option value="">Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Respiratory Conditions -->
+                        <div class="form-section">
+                            <h3>Respiratory Conditions</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="asthma" name="respiratory">
+                                    <span>Asthma</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="copd" name="respiratory">
+                                    <span>COPD (Chronic Obstructive Pulmonary Disease)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="bronchitis" name="respiratory">
+                                    <span>Bronchitis</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="allergies" name="respiratory">
+                                    <span>Allergies</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Cardiovascular Conditions -->
+                        <div class="form-section">
+                            <h3>Cardiovascular Conditions</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="heart-disease" name="cardiovascular">
+                                    <span>Heart Disease</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="hypertension" name="cardiovascular">
+                                    <span>Hypertension (High Blood Pressure)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Other Conditions -->
+                        <div class="form-section">
+                            <h3>Other Conditions</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="diabetes" name="other">
+                                    <span>Diabetes</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="smoker" name="other">
+                                    <span>Smoker</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="pregnant" name="other">
+                                    <span>Pregnant</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Current Symptoms -->
+                        <div class="form-section">
+                            <h3>Current Symptoms</h3>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="cough" name="symptoms">
+                                    <span>Cough</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="wheeze" name="symptoms">
+                                    <span>Wheezing</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="chest-tightness" name="symptoms">
+                                    <span>Chest Tightness</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="headache" name="symptoms">
+                                    <span>Headache</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="fatigue" name="symptoms">
+                                    <span>Fatigue</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="shortness-breath" name="symptoms">
+                                    <span>Shortness of Breath</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Activity & Exposure -->
+                        <div class="form-section">
+                            <h3>Daily Activity & Exposure</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="outdoor-hours">Daily Outdoor Exposure (hours)</label>
+                                    <input type="number" id="outdoor-hours" min="0" max="24" step="0.5" required
+                                        class="input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="activity-level">Activity Level</label>
+                                    <select id="activity-level" required class="input">
+                                        <option value="">Select</option>
+                                        <option value="sedentary">Sedentary (mostly indoors)</option>
+                                        <option value="light">Light (occasional outdoor walks)</option>
+                                        <option value="moderate">Moderate (regular outdoor activity)</option>
+                                        <option value="active">Active (frequent outdoor exercise)</option>
+                                        <option value="very-active">Very Active (outdoor sports/work)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            Get Personalized Health Advisory
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Step 3: Health Advisory Dashboard -->
+            <section id="advisory-section" class="section">
+                <div class="section-header">
+                    <h2>Your Personalized Health Advisory</h2>
+                    <p id="advisory-timestamp"></p>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading-state" class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Analyzing air quality and generating personalized recommendations...</p>
+                </div>
+
+                <!-- AQI Overview -->
+                <div id="aqi-overview" class="aqi-overview hidden">
+                    <div class="aqi-card">
+                        <div class="aqi-main">
+                            <div class="aqi-value-container">
+                                <div id="aqi-value" class="aqi-value">--</div>
+                                <div id="aqi-category" class="aqi-category">--</div>
+                            </div>
+                            <div class="aqi-info">
+                                <div class="aqi-location">
+                                    <span class="icon">📍</span>
+                                    <span id="station-name">--</span>
+                                </div>
+                                <div class="aqi-time">
+                                    <span class="icon">🕐</span>
+                                    <span id="measurement-time">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pollutants-grid" id="pollutants-grid">
+                            <!-- Pollutant cards will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment -->
+                <div id="risk-assessment" class="card hidden">
+                    <div class="card-header">
+                        <h3>🎯 Your Risk Level</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="risk-level-badge" class="risk-badge">--</div>
+                        <p id="risk-summary" class="risk-summary">--</p>
+                    </div>
+                </div>
+
+                <!-- Health Impacts -->
+                <div id="health-impacts" class="card hidden">
+                    <div class="card-header">
+                        <h3>⚕️ Health Impacts</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="health-impacts-list" class="impacts-list">
+                            <!-- Health impacts will be inserted here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Personalized Recommendations -->
+                <div id="recommendations" class="card hidden">
+                    <div class="card-header">
+                        <h3>💡 Personalized Recommendations</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="recommendations-list" class="recommendations-grid">
+                            <!-- Recommendations will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Urgent Warnings -->
+                <div id="urgent-warnings" class="card warning-card hidden">
+                    <div class="card-header">
+                        <h3>🚨 Urgent Warnings</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="urgent-warnings-list" class="warnings-list">
+                            <!-- Urgent warnings will be inserted here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Activity Planning -->
+                <div id="activity-planning" class="card hidden">
+                    <div class="card-header">
+                        <h3>📅 Safe Activity Planning</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="activity-plan-content">
+                            <!-- Activity planning will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div id="action-buttons" class="action-buttons hidden">
+                    <button id="save-profile-btn" class="btn btn-secondary">
+                        <span class="btn-icon">💾</span>
+                        Save Profile
+                    </button>
+                    <button id="refresh-data-btn" class="btn btn-secondary">
+                        <span class="btn-icon">🔄</span>
+                        Refresh Data
+                    </button>
+                    <button id="new-assessment-btn" class="btn btn-primary">
+                        <span class="btn-icon">🆕</span>
+                        New Assessment
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Delhi-NCR Health Advisory. Powered by Gemini AI & OpenAQ.</p>
+            <p class="footer-disclaimer">This system provides general health advice only and is not a substitute for
+                professional medical consultation.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="config.js?v=1.1.1"></script>
+    <script src="utils.js?v=1.1.1"></script>
+    <script src="aqi_service.js?v=1.1.1"></script>
+    <script src="firebase-config.js?v=1.1.1"></script>
+    <script src="advisory_engine.js?v=1.1.1"></script>
+    <script src="app.js?v=1.1.1"></script>
+</body>
+
+</html>

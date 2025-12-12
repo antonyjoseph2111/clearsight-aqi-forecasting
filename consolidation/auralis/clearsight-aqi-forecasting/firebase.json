@@ -1,0 +1,16 @@
+{
+    "hosting": {
+        "public": "AQI_Map_Website",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Air Pollution Source Attribution System - Complete Methodology</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+
+            h1,
+            h2,
+            h3 {
+                page-break-after: avoid;
+            }
+
+            table,
+            pre {
+                page-break-inside: avoid;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #fff;
+        }
+
+        h1 {
+            color: #1a365d;
+            border-bottom: 3px solid #3182ce;
+            padding-bottom: 15px;
+            font-size: 2.2em;
+        }
+
+        h2 {
+            color: #2b6cb0;
+            margin-top: 40px;
+            border-left: 4px solid #3182ce;
+            padding-left: 15px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: #2c5282;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+
+        th,
+        td {
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #edf2f7;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        pre {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.85em;
+            line-height: 1.4;
+        }
+
+        code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        blockquote {
+            border-left: 4px solid #3182ce;
+            margin: 20px 0;
+            padding: 15px 20px;
+            background: #ebf8ff;
+            font-style: italic;
+            color: #2c5282;
+        }
+
+        .header-info {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .header-info p {
+            margin: 5px 0;
+        }
+
+        .toc {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .toc ol {
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #2b6cb0;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .flow-diagram {
+            background: #1a202c;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.75em;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e2e8f0;
+            margin: 40px 0;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .print-btn:hover {
+            background: #2b6cb0;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <h1>Delhi Air Pollution Source Attribution System</h1>
+    <h2 style="border:none; margin-top:0; padding:0; color:#4a5568;">Complete Step-by-Step Methodology</h2>
+
+    <div class="header-info">
+        <p><strong>Document Version:</strong> 1.0</p>
+        <p><strong>Date:</strong> December 6, 2025</p>
+        <p><strong>Project:</strong> Delhi NCR Pollution Source Predictor (SIH 2025)</p>
+    </div>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ol>
+            <li><a href="#overview">System Overview</a></li>
+            <li><a href="#step1">Step 1: Data Ingestion</a></li>
+            <li><a href="#step2">Step 2: Distance & Direction Calculation</a></li>
+            <li><a href="#step3">Step 3: Wind Direction & Upwind Check</a></li>
+            <li><a href="#step4">Step 4: Stubble Burning Score</a></li>
+            <li><a href="#step5">Step 5: Traffic Score</a></li>
+            <li><a href="#step6">Step 6: Industry Score</a></li>
+            <li><a href="#step7">Step 7: Dust Score</a></li>
+            <li><a href="#step8">Step 8: Local Combustion Score</a></li>
+            <li><a href="#step9">Step 9: Secondary Aerosol Score</a></li>
+            <li><a href="#step10">Step 10: Normalization</a></li>
+            <li><a href="#step11">Step 11: Modulation Engine</a></li>
+            <li><a href="#flow">Complete Data Flow</a></li>
+            <li><a href="#refs">References</a></li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <h2 id="overview">1. System Overview</h2>
+    <p>This system identifies <strong>which pollution sources are contributing to air quality readings</strong> at a
+        given CPCB monitoring station at a specific time. It outputs <strong>percentage contributions</strong> from 6
+        sources:</p>
+
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><strong>Stubble Burning</strong></td>
+            <td>Crop residue fires from Punjab/Haryana (transported)</td>
+        </tr>
+        <tr>
+            <td><strong>Traffic</strong></td>
+            <td>Vehicle emissions (local)</td>
+        </tr>
+        <tr>
+            <td><strong>Industry</strong></td>
+            <td>Power plants, factories (point sources)</td>
+        </tr>
+        <tr>
+            <td><strong>Dust</strong></td>
+            <td>Road dust, soil, construction</td>
+        </tr>
+        <tr>
+            <td><strong>Local Combustion</strong></td>
+            <td>Fireworks, waste burning, domestic heating</td>
+        </tr>
+        <tr>
+            <td><strong>Secondary Aerosols</strong></td>
+            <td>Formed in atmosphere from precursor gases</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2 id="step1">2. Step 1: Data Ingestion</h2>
+    <p>The system loads 4 core datasets from CSV files:</p>
+
+    <h3>2.1 Stations Metadata (<code>stations_metadata.csv</code>)</h3>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>station_id</code></td>
+            <td>Unique identifier</td>
+            <td>10484</td>
+        </tr>
+        <tr>
+            <td><code>station_name</code></td>
+            <td>Station name</td>
+            <td>"Anand Vihar Delhi - DPCC"</td>
+        </tr>
+        <tr>
+            <td><code>lat</code></td>
+            <td>Latitude</td>
+            <td>28.6469</td>
+        </tr>
+        <tr>
+            <td><code>lon</code></td>
+            <td>Longitude</td>
+            <td>77.3164</td>
+        </tr>
+        <tr>
+            <td><code>traffic_factor</code></td>
+            <td>Traffic exposure (0.4-0.9)</td>
+            <td>0.8</td>
+        </tr>
+    </table>
+
+    <h3>2.2 Fire Data (<code>fires_combined.csv</code>)</h3>
+    <p>VIIRS satellite fire detection data:</p>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>latitude</code></td>
+            <td>Fire location latitude</td>
+            <td>30.45</td>
+        </tr>
+        <tr>
+            <td><code>longitude</code></td>
+            <td>Fire location longitude</td>
+            <td>76.23</td>
+        </tr>
+        <tr>
+            <td><code>acq_date</code></td>
+            <td>Acquisition date</td>
+            <td>2024-11-05</td>
+        </tr>
+        <tr>
+            <td><code>frp</code></td>
+            <td>Fire Radiative Power (MW)</td>
+            <td>35.2</td>
+        </tr>
+    </table>
+
+    <h3>2.3 Industries Data (<code>industries_cleaned.csv</code>)</h3>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>latitude</code></td>
+            <td>Facility latitude</td>
+            <td>28.78</td>
+        </tr>
+        <tr>
+            <td><code>longitude</code></td>
+            <td>Facility longitude</td>
+            <td>77.14</td>
+        </tr>
+        <tr>
+            <td><code>facility_type</code></td>
+            <td>Type of facility</td>
+            <td>"Power_Plant"</td>
+        </tr>
+        <tr>
+            <td><code>emission_weight</code></td>
+            <td>Relative emission strength (0-100)</td>
+            <td>45</td>
+        </tr>
+    </table>
+
+    <h3>2.4 Wind Data (<code>wind_filtered.csv</code>)</h3>
+    <p>Hourly meteorological data from ERA5:</p>
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td><code>timestamp</code></td>
+            <td>Date and time</td>
+            <td>2025-02-18 10:00:00</td>
+        </tr>
+        <tr>
+            <td><code>wind_dir_10m</code></td>
+            <td>Wind direction at 10m (degrees)</td>
+            <td>290</td>
+        </tr>
+        <tr>
+            <td><code>wind_speed_10m</code></td>
+            <td>Wind speed at 10m (m/s)</td>
+            <td>3.2</td>
+        </tr>
+        <tr>
+            <td><code>blh</code></td>
+            <td>Boundary Layer Height (meters)</td>
+            <td>380</td>
+        </tr>
+    </table>
+
+    <hr class="page-break">
+
+    <h2 id="step2">3. Step 2: Distance & Direction Calculation</h2>
+    <p>For every potential source (fire or industry), we calculate distance and bearing from the station.</p>
+
+    <h3>3.1 Haversine Distance Formula</h3>
+    <p>The great-circle distance between two points on Earth:</p>
+    <pre><code>a = sin²(Δlat/2) + cos(lat1) × cos(lat2) × sin²(Δlon/2)
+c = 2 × atan2(√a, √(1-a))
+distance = R × c</code></pre>
+
+    <p>Where:</p>
+    <ul>
+        <li><strong>R</strong> = 6,371 km (Earth's radius)</li>
+        <li><strong>lat1, lon1</strong> = Station coordinates (radians)</li>
+        <li><strong>lat2, lon2</strong> = Source coordinates (radians)</li>
+    </ul>
+
+    <p><strong>Example:</strong></p>
+    <ul>
+        <li>Station (Anand Vihar): 28.6469°N, 77.3164°E</li>
+        <li>Fire (Punjab): 30.45°N, 76.23°E</li>
+        <li><strong>Result: Distance = 215 km</strong></li>
+    </ul>
+
+    <h3>3.2 Bearing Calculation</h3>
+    <p>The initial bearing (direction) from station to source:</p>
+    <pre><code>θ = atan2(sin(Δlon) × cos(lat2), 
+          cos(lat1) × sin(lat2) - sin(lat1) × cos(lat2) × cos(Δlon))
+bearing = (θ × 180/π + 360) mod 360</code></pre>
+
+    <table>
+        <tr>
+            <th>Bearing</th>
+            <th>Direction</th>
+        </tr>
+        <tr>
+            <td>0°</td>
+            <td>North</td>
+        </tr>
+        <tr>
+            <td>90°</td>
+            <td>East</td>
+        </tr>
+        <tr>
+            <td>180°</td>
+            <td>South</td>
+        </tr>
+        <tr>
+            <td>270°</td>
+            <td>West</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2 id="step3">4. Step 3: Wind Direction & Upwind Check</h2>
+
+    <h3>4.1 Meteorological Convention</h3>
+    <p><strong>Wind direction = direction wind is coming FROM</strong></p>
+    <ul>
+        <li>Wind direction 270° means wind blowing FROM west TO east</li>
+        <li>Wind direction 0° means wind blowing FROM north TO south</li>
+    </ul>
+
+    <h3>4.2 Upwind Check Algorithm</h3>
+    <p>A source is "upwind" if the bearing from station to source approximately matches the wind direction:</p>
+    <pre><code>angle_difference = |bearing_to_source - wind_direction|
+if angle_difference > 180:
+    angle_difference = 360 - angle_difference
+
+is_upwind = (angle_difference <= tolerance)  # tolerance = 60°</code></pre>
+
+    <p><strong>Example:</strong></p>
+    <ul>
+        <li>Fire bearing = 315°</li>
+        <li>Wind direction = 290°</li>
+        <li>Angle difference = |315 - 290| = 25°</li>
+        <li>25° < 60° → <strong>Fire IS UPWIND ✓</strong></li>
+    </ul>
+
+    <hr class="page-break">
+
+    <h2 id="step4">5. Step 4: Stubble Burning Score (0-80)</h2>
+
+    <h3>5.1 Physical Basis</h3>
+    <p>Crop residue fires in Punjab/Haryana (Oct-Nov) emit smoke containing PM2.5, black carbon, and organic compounds.
+        Under favorable wind conditions, this smoke is transported hundreds of kilometers to Delhi.</p>
+
+    <h3>5.2 Algorithm</h3>
+    <pre><code>stubble_score = 0
+
+# GATE 1: Season check
+IF month NOT IN [October, November, December, January]:
+    RETURN stubble_score = 5  # Baseline (off-season)
+
+# GATE 2: Wind direction check (must be from NW: 250-340°)
+IF wind_direction NOT IN [250°, 340°]:
+    RETURN stubble_score = 8
+
+# GATE 3: Loop through VIIRS fires
+FOR each fire in fire_data:
+    distance = haversine(station, fire)
+    IF distance > 400 km: CONTINUE  # Too far
+    
+    bearing = bearing_to_fire
+    IF NOT is_upwind(bearing, wind_direction, tolerance=60°): CONTINUE
+    
+    # Calculate contribution factors
+    alignment = 1 - (angle_difference / 60)      # 1.0 if perfect alignment
+    distance_decay = 1 / (1 + distance / 100)    # Closer = higher
+    blh_factor = max(0.2, 1 - BLH / 1000)        # Low BLH = more trapping
+    frp_factor = min(FRP / 50, 1.0)              # Fire intensity
+    
+    contribution = alignment × distance_decay × blh_factor × frp_factor × 100
+    stubble_score += contribution
+
+# Cap and scale
+stubble_score = min(80, 5 + stubble_score / 3)</code></pre>
+
+    <h3>5.3 Parameter Justifications</h3>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+            <th>Source</th>
+        </tr>
+        <tr>
+            <td>Season Oct-Jan</td>
+            <td>Stubble burning period</td>
+            <td>NASA FIRMS data shows 80%+ fires in Oct-Nov</td>
+        </tr>
+        <tr>
+            <td>Wind 250-340°</td>
+            <td>NW sector</td>
+            <td>Punjab/Haryana are NW of Delhi (geography)</td>
+        </tr>
+        <tr>
+            <td>Distance 400 km</td>
+            <td>Transport cutoff</td>
+            <td>Smoke transport studies</td>
+        </tr>
+        <tr>
+            <td>BLH 1000 m</td>
+            <td>Reference height</td>
+            <td>Low BLH = poor mixing (trapping)</td>
+        </tr>
+        <tr>
+            <td>FRP 50 MW</td>
+            <td>Normalization</td>
+            <td>Median agricultural fire FRP ~20-50 MW</td>
+        </tr>
+    </table>
+
+    <hr class="page-break">
+
+    <h2 id="step5">6. Step 5: Traffic Score (0-80)</h2>
+
+    <h3>6.1 Physical Basis</h3>
+    <p><strong>NO2 is the primary traffic tracer.</strong></p>
+    <blockquote>
+        "In urban areas, NO2 is predominantly produced by vehicle emissions, and thus, its concentration at any given
+        location depends on the local traffic density."<br>
+        — WHO REVIHAAP Project
+    </blockquote>
+
+    <h3>6.2 Algorithm</h3>
+    <pre><code># TIME FACTOR (rush hour = higher traffic)
+IF hour IN [7, 8, 9, 10]:        time_factor = 1.0   # Morning rush
+ELIF hour IN [17, 18, 19, 20]:   time_factor = 1.0   # Evening rush
+ELIF hour IN [0, 1, 2, 3, 4, 5]: time_factor = 0.15  # Night
+ELSE:                             time_factor = 0.5   # Midday
+
+# DAY FACTOR
+day_factor = 1.0 IF weekday ELSE 0.6
+
+# NO2 FACTOR (CPCB threshold: 80 µg/m³)
+IF NO2 > 100:   no2_factor = 1.0   # Very high
+ELIF NO2 > 70:  no2_factor = 0.8   # High
+ELIF NO2 > 50:  no2_factor = 0.6   # Moderate
+ELIF NO2 > 30:  no2_factor = 0.4   # Low-moderate
+ELSE:           no2_factor = 0.2   # Low
+
+# CALCULATE SCORE
+traffic_score = time_factor × day_factor × no2_factor × traffic_factor × 100
+traffic_score = max(5, min(80, traffic_score))</code></pre>
+
+    <h3>6.3 Parameter Sources</h3>
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+            <th>Source</th>
+        </tr>
+        <tr>
+            <td>NO2 threshold 80 µg/m³</td>
+            <td>CPCB standard</td>
+            <td>CPCB NAAQS 2009</td>
+        </tr>
+        <tr>
+            <td>Rush hours 7-10, 17-20</td>
+            <td>Peak traffic</td>
+            <td>Standard urban patterns</td>
+        </tr>
+        <tr>
+            <td>Weekend factor 0.6</td>
+            <td>40% reduction</td>
+            <td>Typical weekend traffic</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2 id="step6">7. Step 6: Industry Score (0-80)</h2>
+
+    <h3>7.1 Physical Basis</h3>
+    <p><strong>SO2 is the primary industrial tracer.</strong></p>
+    <blockquote>
+        "Coal-fired electric power plants make up the largest source of national sulfur dioxide (SO2) emissions."<br>
+        — U.S. EIA
+    </blockquote>
+    <p>Vehicles emit negligible SO2 because modern fuels have &lt;15 ppm sulfur. Coal contains 0.5-4% sulfur by weight.
+    </p>
+
+    <h3>7.2 Algorithm</h3>
+    <pre><code># SO2 SIGNAL (70% weight)
+IF SO2 > 50:    so2_score = 85, so2_weight = 0.85
+ELIF SO2 > 35:  so2_score = 65, so2_weight = 0.75
+ELIF SO2 > 20:  so2_score = 40, so2_weight = 0.65
+ELIF SO2 > 10:  so2_score = 20, so2_weight = 0.55
+ELSE:           so2_score = 8,  so2_weight = 0.50
+
+# PROXIMITY SIGNAL (30% weight)
+proximity_score = 0
+FOR each major_emitter (emission_weight >= 20):
+    IF distance > 30 km: CONTINUE
+    IF NOT upwind: CONTINUE
+    
+    alignment = 1 - (angle_difference / 60)
+    dist_decay = 1 / (1 + distance / 10)
+    emission_factor = emission_weight / 100
+    
+    proximity_score += alignment × dist_decay × emission_factor × 100
+
+# COMBINE
+industry_score = so2_weight × so2_score + (1 - so2_weight) × proximity_score</code></pre>
+
+    <hr class="page-break">
+
+    <h2 id="step7">8. Step 7: Dust Score (0-80)</h2>
+
+    <h3>8.1 Physical Basis</h3>
+    <p><strong>PM2.5/PM10 ratio distinguishes dust from combustion.</strong></p>
+    <blockquote>
+        "For fugitive dust generating sources, the PM2.5 fraction of PM10 is <strong>21 percent</strong>"<br>
+        "For combustion sources the PM2.5 fraction of PM10 is <strong>99 percent</strong>"<br>
+        — South Coast Air Quality Management District
+    </blockquote>
+
+    <table>
+        <tr>
+            <th>Source Type</th>
+            <th>PM2.5/PM10 Ratio</th>
+        </tr>
+        <tr>
+            <td><strong>Dust (road/soil)</strong></td>
+            <td>~0.21 (coarse particles)</td>
+        </tr>
+        <tr>
+            <td><strong>Combustion</strong></td>
+            <td>~0.99 (fine particles)</td>
+        </tr>
+    </table>
+
+    <h3>8.2 Algorithm</h3>
+    <pre><code>ratio = PM2.5 / PM10
+
+# SCORE BASED ON RATIO
+IF ratio < 0.25:    score = 75   # Dust dominant
+ELIF ratio < 0.35:  score = 55   # Significant dust
+ELIF ratio < 0.45:  score = 35   # Some dust
+ELIF ratio < 0.55:  score = 20   # Mixed
+ELSE:               score = 10   # Combustion dominant
+
+# SEASONAL ADJUSTMENT (pre-monsoon = more dust)
+IF month IN [March, April, May, June]:
+    score = score × 1.2
+
+# WIND AMPLIFICATION (high wind = dust resuspension)
+IF wind_speed > 5 m/s:
+    score = score × 1.3</code></pre>
+
+    <hr>
+
+    <h2 id="step8">9. Step 8: Local Combustion Score (0-80)</h2>
+
+    <h3>9.1 Physical Basis</h3>
+    <p>Local combustion includes fireworks (Diwali, weddings), waste burning, and domestic heating. This is
+        <strong>different from stubble burning</strong> because:</p>
+    <ul>
+        <li>It's <strong>local</strong> (no upwind requirement)</li>
+        <li><strong>Different timing</strong> (evening/night, Diwali, winter)</li>
+        <li><strong>Different chemistry</strong> (high CO/NOx ratio = incomplete combustion)</li>
+    </ul>
+
+    <h3>9.2 Algorithm</h3>
+    <pre><code>score = 10  # Base
+
+# DIWALI CHECK (major fireworks event)
+IF is_diwali_peak_period:
+    IF evening_night:
+        score += 40 × 3.0  # Peak Diwali night
+    ELSE:
+        score += 15 × 3.0  # Diwali daytime
+
+# WEDDING SEASON + EVENING (fireworks common)
+ELIF month IN [Nov, Dec, Jan, Feb] AND hour >= 18:
+    score += 15
+
+# HIGH PM WITHOUT UPWIND FIRES = LOCAL SOURCE
+IF PM2.5 > 150 AND upwind_fire_count < 10:
+    score += (PM2.5 - 150) / 20
+
+# CO/NOx RATIO (high ratio = biomass/waste burning)
+co_nox_ratio = (CO × 1000) / NO2
+IF co_nox_ratio > 50:
+    score += 20  # Incomplete combustion
+
+# WINTER EVENING (heating/waste burning)
+IF month IN [Nov, Dec, Jan, Feb] AND evening_night:
+    score += 10</code></pre>
+
+    <hr class="page-break">
+
+    <h2 id="step9">10. Step 9: Secondary Aerosol Score (0-50)</h2>
+
+    <h3>10.1 Physical Basis</h3>
+    <p>Secondary aerosols form in the atmosphere from precursor gases:</p>
+    <ul>
+        <li><strong>SO2 → Sulfates (SO4²⁻)</strong></li>
+        <li><strong>NOx + VOCs → Nitrates (NO3⁻)</strong></li>
+    </ul>
+    <p>Source: ARAI/TERI 2018 study (Page 396) - secondary particulates = 26% ± 7%</p>
+
+    <h3>10.2 Algorithm</h3>
+    <pre><code>score = 15  # Base (always some secondary formation)
+
+# SO2 → Sulfates
+IF SO2 > 15:
+    score += min(20, SO2 / 3)
+    
+    # High humidity accelerates sulfate formation
+    IF humidity > 70%:
+        score += 10
+
+# NO2 → Nitrates (photochemical)
+IF NO2 > 40:
+    score += min(15, NO2 / 8)
+
+# Warm temperature = more photochemistry
+IF temperature > 25°C:
+    score += 5
+
+secondary_score = min(50, score)  # Capped per ARAI/TERI 2018</code></pre>
+
+    <hr>
+
+    <h2 id="step10">11. Step 10: Normalization</h2>
+    <p>Convert raw scores to percentage contributions:</p>
+    <pre><code>total = stubble_score + traffic_score + industry_score + 
+        dust_score + local_combustion_score + secondary_score
+
+stubble_pct     = (stubble_score / total) × 100
+traffic_pct     = (traffic_score / total) × 100
+industry_pct    = (industry_score / total) × 100
+dust_pct        = (dust_score / total) × 100
+local_comb_pct  = (local_combustion_score / total) × 100
+secondary_pct   = (secondary_score / total) × 100</code></pre>
+
+    <p><strong>Example:</strong></p>
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Raw Score</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>Stubble</td>
+            <td>62</td>
+            <td>31.8%</td>
+        </tr>
+        <tr>
+            <td>Traffic</td>
+            <td>48</td>
+            <td>24.6%</td>
+        </tr>
+        <tr>
+            <td>Industry</td>
+            <td>30</td>
+            <td>15.4%</td>
+        </tr>
+        <tr>
+            <td>Secondary</td>
+            <td>25</td>
+            <td>12.8%</td>
+        </tr>
+        <tr>
+            <td>Dust</td>
+            <td>18</td>
+            <td>9.2%</td>
+        </tr>
+        <tr>
+            <td>Local Combustion</td>
+            <td>12</td>
+            <td>6.2%</td>
+        </tr>
+        <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>195</strong></td>
+            <td><strong>100%</strong></td>
+        </tr>
+    </table>
+
+    <hr class="page-break">
+
+    <h2 id="step11">12. Step 11: Modulation Engine</h2>
+    <p>The modulation engine is an <strong>alternative approach</strong> that adjusts scientifically validated baseline
+        values (priors) based on real-time anomalies.</p>
+
+    <h3>12.1 Validated Priors (from ARAI/TERI 2018)</h3>
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Prior %</th>
+            <th>Source</th>
+        </tr>
+        <tr>
+            <td>Traffic</td>
+            <td>22%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+        <tr>
+            <td>Stubble Burning</td>
+            <td>22%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+        <tr>
+            <td>Secondary Aerosols</td>
+            <td>26%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+        <tr>
+            <td>Dust</td>
+            <td>15%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+        <tr>
+            <td>Industry</td>
+            <td>12%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+        <tr>
+            <td>Local Combustion</td>
+            <td>4%</td>
+            <td>ARAI/TERI 2018, Page 396</td>
+        </tr>
+    </table>
+
+    <h3>12.2 Baselines (from Data)</h3>
+    <table>
+        <tr>
+            <th>Baseline</th>
+            <th>Value</th>
+            <th>Source</th>
+        </tr>
+        <tr>
+            <td>BLH (winter)</td>
+            <td>381 m</td>
+            <td>Computed from wind_filtered.csv</td>
+        </tr>
+        <tr>
+            <td>BLH (summer)</td>
+            <td>1106 m</td>
+            <td>Computed from wind_filtered.csv</td>
+        </tr>
+        <tr>
+            <td>NO2 (rush hour)</td>
+            <td>100 µg/m³</td>
+            <td>IIT Kanpur 2016</td>
+        </tr>
+        <tr>
+            <td>NO2 (overall)</td>
+            <td>71 µg/m³</td>
+            <td>IIT Kanpur 2016</td>
+        </tr>
+        <tr>
+            <td>Fires (stubble season)</td>
+            <td>193/day</td>
+            <td>Computed from fires_combined.csv</td>
+        </tr>
+        <tr>
+            <td>SO2 (average)</td>
+            <td>15 µg/m³</td>
+            <td>IIT Kanpur 2016</td>
+        </tr>
+        <tr>
+            <td>PM2.5/PM10 ratio</td>
+            <td>0.625</td>
+            <td>IIT Kanpur 2016</td>
+        </tr>
+    </table>
+
+    <h3>12.3 Modulation Formula</h3>
+    <p>For each source:</p>
+    <pre><code>Modulation_Factor = Current_Value / Baseline_Value
+Weighted_Prior = Base_Prior × Modulation_Factor</code></pre>
+
+    <p><strong>Example (Traffic):</strong></p>
+    <ul>
+        <li>Current NO2 = 150 µg/m³</li>
+        <li>Baseline NO2 (rush hour) = 100 µg/m³</li>
+        <li>Modulation factor = 150 / 100 = <strong>1.5</strong></li>
+        <li>Weighted traffic = 0.22 × 1.5 = <strong>0.33</strong></li>
+    </ul>
+
+    <hr class="page-break">
+
+    <h2 id="flow">13. Complete Data Flow</h2>
+    <div class="flow-diagram">┌──────────────────────────────────────────────────────────────────────────┐
+        │ INPUT DATA (CSV FILES) │
+        ├────────────────┬────────────────┬────────────────┬──────────────────────┤
+        │ stations.csv │ fires.csv │ industries.csv │ wind.csv │
+        │ - lat, lon │ - lat, lon │ - lat, lon │ - wind_dir │
+        │ - traffic_fac │ - FRP (power) │ - emission_wt │ - wind_speed │
+        │ │ - date │ - facility_type│ - BLH │
+        └────────┬───────┴───────┬────────┴───────┬────────┴──────────┬───────────┘
+        │ │ │ │
+        ▼ ▼ ▼ ▼
+        ┌──────────────────────────────────────────────────────────────────────────┐
+        │ STEP 2: GEOGRAPHIC CALCULATIONS │
+        │ For each source: │
+        │ • distance = haversine(station, source) │
+        │ • bearing = direction from station to source │
+        │ • is_upwind = angular_diff(bearing, wind) < 60° │
+            └─────────────────────────────────────┬────────────────────────────────────┘ │ ▼
+            ┌──────────────────────────────────────────────────────────────────────────┐ │ STEP 4-9: SOURCE SCORE
+            CALCULATIONS │ │ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ │ │ │ STUBBLE │ │ TRAFFIC │
+            │ INDUSTRY │ │ DUST │ │ │ │ (0-80) │ │ (0-80) │ │ (0-80) │ │ (0-80) │ │ │ │ Fire count │ │ NO2 reading │ │
+            SO2 reading │ │ PM2.5/PM10 │ │ │ │ Wind align │ │ Hour of day │ │ Upwind │ │ Wind speed │ │ │ │ Distance │ │
+            Day of week │ │ power plants│ │ Month │ │ │ └──────┬──────┘ └──────┬──────┘ └──────┬──────┘ └──────┬──────┘
+            │ │ ┌─────────────┐ ┌─────────────┐ │ │ │ LOCAL │ │ SECONDARY │ │ │ │ COMBUSTION │ │ AEROSOLS │ │ │ │ (0-80)
+            │ │ (0-50) │ │ │ │ Diwali? │ │ SO2 + NO2 │ │ │ │ Wedding szn?│ │ Humidity │ │ │ │ CO/NOx │ │ Temperature │ │
+            │ └──────┬──────┘ └──────┬──────┘ │
+            └─────────┴───────────────┴────────────────────────────────────────────────┘ │ ▼
+            ┌──────────────────────────────────────────────────────────────────────────┐ │ STEP 10: NORMALIZATION │ │
+            total=sum(all_scores) │ │ percentage[source]=(score[source] / total) × 100 │
+            └─────────────────────────────────────┬────────────────────────────────────┘ │ ▼
+            ┌──────────────────────────────────────────────────────────────────────────┐ │ FINAL OUTPUT (JSON) │ │ { │
+            │ "stubble_burning" : {"percentage": 31.8, "level" : "High" }, │ │ "traffic" : {"percentage": 24.6, "level"
+            : "Medium" }, │ │ "industry" : {"percentage": 15.4, "level" : "Medium" }, │ │ "secondary_aerosols" :
+            {"percentage": 12.8, "level" : "Medium" }, │ │ "dust" : {"percentage": 9.2, "level" : "Low" }, │
+            │ "local_combustion" : {"percentage": 6.2, "level" : "Low" } │ │ } │
+            └──────────────────────────────────────────────────────────────────────────┘</div>
+
+            <hr class="page-break">
+
+            <h2 id="refs">14. References</h2>
+
+            <h3>Primary Sources (Source Apportionment)</h3>
+            <ol>
+                <li><strong>ARAI & TERI (2018)</strong>. "Source Apportionment of PM2.5 & PM10 of Delhi NCR for
+                    Identification of Major Sources." Chapter 4, Section 4.4.1, Page 396.</li>
+                <li><strong>IIT Kanpur (2016)</strong>. "Comprehensive Study on Air Pollution and Green House Gases
+                    (GHGs) in Delhi." January 2016, 334 pp.</li>
+            </ol>
+
+            <h3>Supporting Literature</h3>
+            <ol start="3">
+                <li>WHO (2013). Review of Evidence on Health Aspects of Air Pollution – REVIHAAP Project. NCBI Bookshelf
+                    NBK361807.</li>
+                <li>U.S. Energy Information Administration (2018). "Sulfur dioxide emissions from U.S. power plants."
+                </li>
+                <li>South Coast Air Quality Management District (2006). "Final Methodology to Calculate PM2.5
+                    Significance Thresholds."</li>
+                <li>CPCB (2009). National Ambient Air Quality Standards.</li>
+            </ol>
+
+            <h3>Data Sources</h3>
+            <ol start="7">
+                <li>VIIRS Active Fire Data - NASA FIRMS</li>
+                <li>ERA5 Reanalysis (wind, BLH) - Copernicus Climate Data Store</li>
+                <li>CPCB Air Quality Monitoring Data</li>
+            </ol>
+
+            <hr>
+
+            <h2>Summary Table: What Determines Each Source</h2>
+            <table>
+                <tr>
+                    <th>Source</th>
+                    <th>Primary Tracer</th>
+                    <th>Supporting Inputs</th>
+                    <th>Key Logic</th>
+                </tr>
+                <tr>
+                    <td><strong>Stubble Burning</strong></td>
+                    <td>Fire count (VIIRS)</td>
+                    <td>Wind dir, BLH, FRP, distance</td>
+                    <td>Upwind fires from NW in Oct-Jan</td>
+                </tr>
+                <tr>
+                    <td><strong>Traffic</strong></td>
+                    <td>NO2 (sensor)</td>
+                    <td>Hour, day of week, CO/NOx</td>
+                    <td>High NO2 during rush hours</td>
+                </tr>
+                <tr>
+                    <td><strong>Industry</strong></td>
+                    <td>SO2 (sensor)</td>
+                    <td>Upwind power plants</td>
+                    <td>SO2 is industrial-only signature</td>
+                </tr>
+                <tr>
+                    <td><strong>Dust</strong></td>
+                    <td>PM2.5/PM10 ratio</td>
+                    <td>Wind speed, month</td>
+                    <td>Low ratio = coarse dust particles</td>
+                </tr>
+                <tr>
+                    <td><strong>Local Combustion</strong></td>
+                    <td>Event calendar + CO</td>
+                    <td>Diwali? Wedding season?</td>
+                    <td>High PM without upwind fires</td>
+                </tr>
+                <tr>
+                    <td><strong>Secondary</strong></td>
+                    <td>SO2 + NO2</td>
+                    <td>Humidity, temperature</td>
+                    <td>Precursor → aerosol formation</td>
+                </tr>
+            </table>
+
+            <hr>
+            <p style="text-align: center; color: #718096;"><strong>End of Document</strong></p>
+            <p style="text-align: center; color: #718096;">Delhi NCR Pollution Source Predictor - SIH 2025</p>
+
+</body>
+
+</html>

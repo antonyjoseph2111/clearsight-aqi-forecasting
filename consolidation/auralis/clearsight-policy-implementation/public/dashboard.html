@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive Delhi-NCR Air Quality Policy Analysis Dashboard (2020-2025)">
+    <title>Clear Sight: Delhi-NCR Air Quality Policy Dashboard | Government Analysis Portal</title>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="dashboard_style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Clear Sight</h1>
+                <p class="subtitle">Comprehensive Policy Analysis & Impact Assessment (2020-2025)</p>
+                <div class="header-badges">
+                    <span class="badge badge-primary">Government of India</span>
+                    <span class="badge badge-secondary">CAQM</span>
+                    <span class="badge badge-secondary">CPCB</span>
+                    <span class="badge badge-secondary">MoEFCC</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="dashboard-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#introduction" class="nav-link active">Introduction</a>
+                <a href="#policy-inventory" class="nav-link">Policy Inventory</a>
+                <a href="#policy-impact" class="nav-link">Impact Analysis</a>
+                <a href="#visualizations" class="nav-link">Visualizations</a>
+                <a href="#causal-model" class="nav-link">Causal Model</a>
+                <a href="#forecasting" class="nav-link">Forecasting</a>
+                <a href="#dashboard-controls" class="nav-link">Dashboard</a>
+                <a href="#compliance" class="nav-link">Compliance</a>
+                <a href="#cross-state" class="nav-link">Cross-State</a>
+                <a href="#conclusion" class="nav-link">Conclusion</a>
+            </div>
+            <button class="export-btn" onclick="exportDashboard()">📊 Export Report</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+
+            <!-- SECTION 1: INTRODUCTION -->
+            <section id="introduction" class="dashboard-section">
+                <h2 class="section-title">1. Introduction: Delhi-NCR Air Quality Challenge</h2>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Why Policy Intervention is Critical</h3>
+                        <p>Delhi-NCR faces severe air pollution challenges requiring coordinated government action:</p>
+                        <ul>
+                            <li><strong>Public Health Crisis:</strong> PM2.5 levels exceed WHO guidelines by 10-15x
+                                during winter</li>
+                            <li><strong>Economic Impact:</strong> Estimated ₹50,000+ crore annual economic loss</li>
+                            <li><strong>Multi-Source Problem:</strong> Vehicular (20-30%), dust (30-40%), biomass
+                                (10-40% seasonal), industrial (10-15%)</li>
+                            <li><strong>Regional Nature:</strong> 30-40% pollution originates from outside NCR
+                                boundaries</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Multi-State & Multi-Ministry Governance</h3>
+                        <p>Effective air quality management requires unprecedented coordination:</p>
+                        <ul>
+                            <li><strong>Central Agencies:</strong> MoEFCC, CPCB, CAQM, MoRTH, Ministry of Power,
+                                Agriculture</li>
+                            <li><strong>State Governments:</strong> Delhi, Haryana, Uttar Pradesh, Punjab, Rajasthan
+                            </li>
+                            <li><strong>Local Bodies:</strong> Municipal corporations, pollution control boards</li>
+                            <li><strong>Regulatory Framework:</strong> CAQM Act 2021 provides statutory authority for
+                                regional coordination</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>2020-2025: Critical Transition Period</h3>
+                        <p>This period marks a paradigm shift in air quality governance:</p>
+                        <ul>
+                            <li><strong>April 2020:</strong> BS-VI implementation - 70-80% reduction in per-vehicle
+                                emissions</li>
+                            <li><strong>October 2020:</strong> CAQM establishment - statutory powers for regional
+                                enforcement</li>
+                            <li><strong>2021-2023:</strong> GRAP enhancement, industrial fuel conversion, EV adoption
+                                acceleration</li>
+                            <li><strong>2024-2025:</strong> Zero-tolerance enforcement, advanced forecasting, clean
+                                mobility mandates</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Technology, Forecasting & Enforcement</h3>
+                        <p>Modern air quality management leverages advanced technology:</p>
+                        <ul>
+                            <li><strong>Real-Time Monitoring:</strong> 85+ CAAQMS stations across NCR</li>
+                            <li><strong>Satellite Surveillance:</strong> NASA FIRMS for stubble burning, Sentinel-5P for
+                                emissions</li>
+                            <li><strong>AI Forecasting:</strong> 7-day AQI predictions with 85% accuracy</li>
+                            <li><strong>Source Apportionment:</strong> Real-time identification of dominant pollution
+                                sources</li>
+                            <li><strong>Back-Trajectory Analysis:</strong> HYSPLIT models for transboundary pollution
+                                tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: COMPLETE POLICY INVENTORY -->
+            <section id="policy-inventory" class="dashboard-section">
+                <h2 class="section-title">2. Complete Policy Inventory (2020-2025)</h2>
+
+                <div class="filter-controls">
+                    <label>Filter by:
+                        <select id="policyYearFilter" onchange="filterPolicies()">
+                            <option value="all">All Years</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </label>
+                    <label>Ministry:
+                        <select id="policyMinistryFilter" onchange="filterPolicies()">
+                            <option value="all">All Ministries</option>
+                            <option value="central">Central Government</option>
+                            <option value="caqm">CAQM</option>
+                            <option value="state">State Governments</option>
+                        </select>
+                    </label>
+                    <input type="text" id="policySearch" placeholder="Search policies..." oninput="filterPolicies()">
+                </div>
+
+                <div id="policyInventoryContainer">
+                    <!-- Policies will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- SECTION 3: POLICY IMPACT EXPLANATIONS -->
+            <section id="policy-impact" class="dashboard-section">
+                <h2 class="section-title">3. Policy-by-Policy Impact Analysis</h2>
+                <div id="policyImpactContainer">
+                    <!-- Impact analyses will be dynamically loaded -->
+                </div>
+            </section>
+
+            <!-- SECTION 4: ADVANCED DATA VISUALIZATIONS -->
+            <section id="visualizations" class="dashboard-section">
+                <h2 class="section-title">4. Advanced Data Visualizations</h2>
+
+                <div class="viz-grid">
+                    <!-- Line Graphs -->
+                    <div class="viz-card full-width">
+                        <h3>AQI Trends (2020-2025)</h3>
+                        <canvas id="aqiTrendChart"></canvas>
+                        <p class="viz-caption">Overall air quality trends showing policy intervention impacts.</p>
+                    </div>
+
+                    <div class="viz-card">
+                        <h3>PM2.5 Seasonal Variation</h3>
+                        <canvas id="pm25SeasonalChart"></canvas>
+                        <p class="viz-caption">Monthly PM2.5 patterns showing winter pollution spikes.</p>
+                    </div>
+
+                    <div class="viz-card">
+                        <h3>Winter Pollution Trends</h3>
+                        <canvas id="winterTrendChart"></canvas>
+                        <p class="viz-caption">October-January average AQI comparison.</p>
+                    </div>
+
+                    <!-- Bar Charts -->
+                    <div class="viz-card">
+                        <h3>Sector-wise Emission Contribution</h3>
+                        <canvas id="sectorEmissionsChart"></canvas>
+                        <p class="viz-caption">Source apportionment showing dominant pollution contributors.</p>
+                    </div>
+
+                    <div class="viz-card">
+                        <h3>Year-wise Pollution Change</h3>
+                        <canvas id="yearlyChangeChart"></canvas>
+                        <p class="viz-caption">Percentage change in pollutants from 2020 baseline.</p>
+                    </div>
+
+                    <!-- Stacked Bar Chart -->
+                    <div class="viz-card full-width">
+                        <h3>Multi-Pollutant Contributions by Year</h3>
+                        <canvas id="multiPollutantChart"></canvas>
+                        <p class="viz-caption">Stacked visualization of PM2.5, PM10, NO2, SO2, CO trends.</p>
+                    </div>
+
+                    <!-- Pie Charts -->
+                    <div class="viz-card">
+                        <h3>Source Apportionment (%)</h3>
+                        <canvas id="sourceApportionmentChart"></canvas>
+                        <p class="viz-caption">Percentage contribution of different pollution sources.</p>
+                    </div>
+
+                    <div class="viz-card">
+                        <h3>Budget Allocation</h3>
+                        <canvas id="budgetChart"></canvas>
+                        <p class="viz-caption">NCAP and state-level funding distribution.</p>
+                    </div>
+
+                    <!-- Area Chart -->
+                    <div class="viz-card full-width">
+                        <h3>EV Adoption vs Emission Reduction</h3>
+                        <canvas id="evAdoptionChart"></canvas>
+                        <p class="viz-caption">Correlation between electric vehicle registrations and emissions.</p>
+                    </div>
+
+                    <!-- Radar Chart -->
+                    <div class="viz-card">
+                        <h3>Multi-Policy Performance</h3>
+                        <canvas id="policyPerformanceChart"></canvas>
+                        <p class="viz-caption">Comparative effectiveness of major policy interventions.</p>
+                    </div>
+
+                    <!-- Heatmap -->
+                    <div class="viz-card">
+                        <h3>Seasonal AQI Intensity Matrix</h3>
+                        <div id="seasonalHeatmap"></div>
+                        <p class="viz-caption">Month-wise AQI patterns across years.</p>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="viz-card full-width">
+                        <h3>Policy Enforcement Timeline (2020-2025)</h3>
+                        <div id="policyTimeline"></div>
+                        <p class="viz-caption">Chronological visualization of major policy implementations.</p>
+                    </div>
+
+                    <!-- Sankey Diagram -->
+                    <div class="viz-card full-width">
+                        <h3>Pollution Flow: Sources to Receptors</h3>
+                        <div id="sankeyDiagram"></div>
+                        <p class="viz-caption">Flow diagram showing pollution transport from sources to receptor areas.
+                        </p>
+                    </div>
+
+                    <!-- Choropleth Map -->
+                    <div class="viz-card full-width">
+                        <h3>District-wise Average AQI (2020-2025)</h3>
+                        <div id="choroplethMap" style="height: 500px;"></div>
+                        <p class="viz-caption">Geographic distribution of air quality across NCR districts.</p>
+                    </div>
+
+                    <!-- Hotspot Map -->
+                    <div class="viz-card full-width">
+                        <h3>Pollution Hotspot Map</h3>
+                        <div id="hotspotMap" style="height: 500px;"></div>
+                        <p class="viz-caption">High-pollution zones requiring targeted interventions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: POLICY-AQI CAUSAL IMPACT MODEL -->
+            <section id="causal-model" class="dashboard-section">
+                <h2 class="section-title">5. Policy-AQI Causal Impact Model</h2>
+
+                <div class="causal-grid">
+                    <div class="causal-card">
+                        <h3>How Policies Change Source Matrices</h3>
+                        <p>Policy interventions alter the relative contribution of different pollution sources:</p>
+                        <ul>
+                            <li><strong>BS-VI:</strong> Reduces vehicular contribution from 30% to 20-25%</li>
+                            <li><strong>PNG Conversion:</strong> Reduces industrial SO2 by 40%</li>
+                            <li><strong>Stubble Management:</strong> Reduces biomass burning from 40% to 10-15%
+                                (Oct-Nov)</li>
+                            <li><strong>Construction Bans (GRAP):</strong> Temporarily reduces dust contribution by 50%
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card">
+                        <h3>GRAP Impact on Daily AQI</h3>
+                        <canvas id="grapImpactChart"></canvas>
+                        <p>Stage-wise GRAP implementation effects:</p>
+                        <ul>
+                            <li><strong>Stage I (AQI 201-300):</strong> 5-10% AQI reduction through dust control</li>
+                            <li><strong>Stage II (AQI 301-400):</strong> 10-15% reduction with DG set bans</li>
+                            <li><strong>Stage III (AQI 401-450):</strong> 15-20% reduction with construction ban</li>
+                            <li><strong>Stage IV (AQI >450):</strong> 20-30% reduction with comprehensive restrictions
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card">
+                        <h3>BS-VI Transport Emission Impact</h3>
+                        <canvas id="bsviImpactChart"></canvas>
+                        <p>Fleet turnover analysis:</p>
+                        <ul>
+                            <li><strong>2020:</strong> 0% BS-VI vehicles, baseline emissions</li>
+                            <li><strong>2023:</strong> 30% fleet BS-VI, 8-10% emission reduction</li>
+                            <li><strong>2025:</strong> 50% fleet BS-VI, 15-18% emission reduction</li>
+                            <li><strong>Projected 2030:</strong> 90% fleet BS-VI, 30-35% emission reduction</li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card">
+                        <h3>EV Adoption Reshaping Road Pollution</h3>
+                        <canvas id="evImpactChart"></canvas>
+                        <p>Electric vehicle penetration effects:</p>
+                        <ul>
+                            <li><strong>2020:</strong> 5,000 EVs, negligible impact</li>
+                            <li><strong>2023:</strong> 80,000 EVs, 2-3% vehicular emission reduction</li>
+                            <li><strong>2025:</strong> 150,000 EVs, 5-7% vehicular emission reduction</li>
+                            <li><strong>Commercial EVs:</strong> Disproportionate impact due to high utilization</li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card">
+                        <h3>Stubble Control & Winter Spike</h3>
+                        <canvas id="stubbleImpactChart"></canvas>
+                        <p>Crop residue burning management:</p>
+                        <ul>
+                            <li><strong>2020:</strong> 76,000 fire events, severe winter pollution</li>
+                            <li><strong>2023:</strong> 35,000 fire events, 54% reduction</li>
+                            <li><strong>2025:</strong> 22,000 fire events, 71% reduction</li>
+                            <li><strong>AQI Impact:</strong> 30-50 point reduction in peak pollution days</li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card">
+                        <h3>Construction Ban PM10 Impact</h3>
+                        <canvas id="constructionImpactChart"></canvas>
+                        <p>GRAP construction restrictions:</p>
+                        <ul>
+                            <li><strong>Normal Days:</strong> Construction contributes 8-12% of PM10</li>
+                            <li><strong>During Ban:</strong> Construction contribution drops to 2-3%</li>
+                            <li><strong>Net Effect:</strong> 15-25 µg/m³ PM10 reduction</li>
+                            <li><strong>Limitation:</strong> Temporary measure, rebound after lifting</li>
+                        </ul>
+                    </div>
+
+                    <div class="causal-card full-width">
+                        <h3>Meteorology-Policy Interaction</h3>
+                        <p>Policy effectiveness varies with meteorological conditions:</p>
+                        <ul>
+                            <li><strong>High Wind Speed (>3 m/s):</strong> Policy impact amplified by better dispersion
+                            </li>
+                            <li><strong>Low Wind Speed (<1 m/s):</strong> Policy impact reduced, pollutants accumulate
+                            </li>
+                            <li><strong>Temperature Inversion:</strong> Traps pollutants, reduces policy effectiveness
+                                by 30-40%</li>
+                            <li><strong>Monsoon Season:</strong> Wet deposition enhances policy benefits</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: FORECASTING & SOURCE ATTRIBUTION -->
+            <section id="forecasting" class="dashboard-section">
+                <h2 class="section-title">6. Forecasting & Source Attribution Framework</h2>
+
+                <div class="forecast-grid">
+                    <div class="forecast-card">
+                        <h3>Meteorological Forecasting Integration</h3>
+                        <p>Air quality forecasting leverages advanced meteorological models:</p>
+                        <ul>
+                            <li><strong>WRF Model:</strong> Weather Research and Forecasting for wind, temperature,
+                                humidity</li>
+                            <li><strong>Boundary Layer Height:</strong> Critical for pollutant dispersion prediction
+                            </li>
+                            <li><strong>Wind Speed & Direction:</strong> Determines transport pathways</li>
+                            <li><strong>Precipitation Forecast:</strong> Wet deposition effects on PM removal</li>
+                            <li><strong>Temperature Inversion:</strong> Predicts pollution accumulation events</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Back-Trajectory Models (HYSPLIT)</h3>
+                        <p>72-hour back-trajectory analysis reveals pollution origins:</p>
+                        <ul>
+                            <li><strong>Northwest Trajectories:</strong> Punjab/Haryana stubble burning (Oct-Nov)</li>
+                            <li><strong>West Trajectories:</strong> Rajasthan industrial emissions</li>
+                            <li><strong>East Trajectories:</strong> UP brick kilns and industrial areas</li>
+                            <li><strong>Local Recirculation:</strong> NCR internal sources during calm conditions</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Satellite Fire Detection</h3>
+                        <canvas id="satelliteFireChart"></canvas>
+                        <p>NASA FIRMS and VIIRS for real-time biomass burning:</p>
+                        <ul>
+                            <li><strong>Detection Threshold:</strong> Fires >375K brightness temperature</li>
+                            <li><strong>Temporal Resolution:</strong> Near real-time (3-6 hour latency)</li>
+                            <li><strong>Spatial Coverage:</strong> 300 km radius around Delhi</li>
+                            <li><strong>Policy Application:</strong> Triggers enforcement actions in source states</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Source Apportionment Models</h3>
+                        <p>Receptor models identify pollution source contributions:</p>
+                        <ul>
+                            <li><strong>PMF (Positive Matrix Factorization):</strong> Chemical fingerprinting</li>
+                            <li><strong>CMB (Chemical Mass Balance):</strong> Source profile matching</li>
+                            <li><strong>Real-time SA:</strong> Hourly source contribution updates</li>
+                            <li><strong>Policy Targeting:</strong> Enables source-specific interventions</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>NCR Air-shed Modeling</h3>
+                        <p>Regional air quality modeling framework:</p>
+                        <ul>
+                            <li><strong>CMAQ Model:</strong> Community Multiscale Air Quality modeling</li>
+                            <li><strong>Emission Inventory:</strong> Sector-wise emissions database</li>
+                            <li><strong>Grid Resolution:</strong> 4 km x 4 km for NCR</li>
+                            <li><strong>Policy Scenarios:</strong> What-if analysis for interventions</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Traffic Emission Routing</h3>
+                        <canvas id="trafficEmissionChart"></canvas>
+                        <p>Road network emission modeling:</p>
+                        <ul>
+                            <li><strong>COPERT Model:</strong> Vehicle emission factors</li>
+                            <li><strong>Traffic Volume Data:</strong> Real-time from sensors</li>
+                            <li><strong>Fleet Composition:</strong> Vehicle type distribution</li>
+                            <li><strong>Hotspot Identification:</strong> High-emission corridors</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Spatio-temporal Interpolation</h3>
+                        <p>IDW and Kriging for pollution mapping:</p>
+                        <ul>
+                            <li><strong>IDW (Inverse Distance Weighting):</strong> Simple spatial interpolation</li>
+                            <li><strong>Kriging:</strong> Geostatistical optimal interpolation</li>
+                            <li><strong>Temporal Smoothing:</strong> Reduces measurement noise</li>
+                            <li><strong>Coverage:</strong> Fills gaps between monitoring stations</li>
+                        </ul>
+                    </div>
+
+                    <div class="forecast-card">
+                        <h3>Policy-Constrained Forecasts</h3>
+                        <canvas id="policyForecastChart"></canvas>
+                        <p>How policy constraints alter forecast outcomes:</p>
+                        <ul>
+                            <li><strong>GRAP Activation:</strong> Forecast triggers pre-emptive measures</li>
+                            <li><strong>Emission Reduction Scenarios:</strong> Quantified policy impact</li>
+                            <li><strong>Confidence Intervals:</strong> Uncertainty quantification</li>
+                            <li><strong>Decision Support:</strong> Optimal policy timing recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: DASHBOARD CONTROLS -->
+            <section id="dashboard-controls" class="dashboard-section">
+                <h2 class="section-title">7. Interactive Dashboard & Data Controls</h2>
+
+                <div class="control-panel">
+                    <div class="control-group">
+                        <h3>Temporal Filters</h3>
+                        <label>Year Range:
+                            <input type="range" id="yearRangeStart" min="2020" max="2025" value="2020"
+                                oninput="updateDashboard()">
+                            <span id="yearRangeStartLabel">2020</span>
+                            to
+                            <input type="range" id="yearRangeEnd" min="2020" max="2025" value="2025"
+                                oninput="updateDashboard()">
+                            <span id="yearRangeEndLabel">2025</span>
+                        </label>
+                        <label>Season:
+                            <select id="seasonFilter" onchange="updateDashboard()">
+                                <option value="all">All Seasons</option>
+                                <option value="winter">Winter (Oct-Jan)</option>
+                                <option value="summer">Summer (Mar-Jun)</option>
+                                <option value="monsoon">Monsoon (Jul-Sep)</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Pollutant Selection</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="pollutantPM25" checked onchange="updateDashboard()">
+                                PM2.5</label>
+                            <label><input type="checkbox" id="pollutantPM10" checked onchange="updateDashboard()">
+                                PM10</label>
+                            <label><input type="checkbox" id="pollutantNO2" checked onchange="updateDashboard()">
+                                NO2</label>
+                            <label><input type="checkbox" id="pollutantSO2" checked onchange="updateDashboard()">
+                                SO2</label>
+                            <label><input type="checkbox" id="pollutantCO" checked onchange="updateDashboard()">
+                                CO</label>
+                            <label><input type="checkbox" id="pollutantO3" onchange="updateDashboard()"> O3</label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Source Category</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="sourceVehicular" checked onchange="updateDashboard()">
+                                Vehicular</label>
+                            <label><input type="checkbox" id="sourceDust" checked onchange="updateDashboard()"> Road
+                                Dust</label>
+                            <label><input type="checkbox" id="sourceBiomass" checked onchange="updateDashboard()">
+                                Biomass Burning</label>
+                            <label><input type="checkbox" id="sourceIndustrial" checked onchange="updateDashboard()">
+                                Industrial</label>
+                            <label><input type="checkbox" id="sourceConstruction" checked onchange="updateDashboard()">
+                                Construction</label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Geographic Filter</h3>
+                        <select id="districtFilter" onchange="updateDashboard()">
+                            <option value="all">All NCR</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="gurugram">Gurugram</option>
+                            <option value="faridabad">Faridabad</option>
+                            <option value="ghaziabad">Ghaziabad</option>
+                            <option value="noida">Noida</option>
+                            <option value="greater-noida">Greater Noida</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Policy Toggle</h3>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="policyBSVI" checked onchange="updateDashboard()"> BS-VI
+                                Impact</label>
+                            <label><input type="checkbox" id="policyGRAP" checked onchange="updateDashboard()"> GRAP
+                                Periods</label>
+                            <label><input type="checkbox" id="policyEV" checked onchange="updateDashboard()"> EV
+                                Policy</label>
+                            <label><input type="checkbox" id="policyStubble" checked onchange="updateDashboard()">
+                                Stubble Control</label>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Export Options</h3>
+                        <button onclick="exportCSV()" class="btn-export">📄 Export Data (CSV)</button>
+                        <button onclick="exportPDF()" class="btn-export">📑 Export Report (PDF)</button>
+                        <button onclick="exportCharts()" class="btn-export">📊 Export Charts (PNG)</button>
+                    </div>
+                </div>
+
+                <div class="live-widget">
+                    <h3>Live AQI Widget (Simulated)</h3>
+                    <div id="liveAQI" class="aqi-display">
+                        <div class="aqi-value">--</div>
+                        <div class="aqi-category">Loading...</div>
+                        <div class="aqi-timestamp">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: COMPLIANCE & ENFORCEMENT -->
+            <section id="compliance" class="dashboard-section">
+                <h2 class="section-title">8. Compliance, Violations & Enforcement</h2>
+
+                <div class="compliance-grid">
+                    <div class="compliance-card">
+                        <h3>Penalty Systems</h3>
+                        <canvas id="penaltyTrendChart"></canvas>
+                        <ul>
+                            <li><strong>Construction Violations:</strong> ₹50,000 - ₹1 lakh per site</li>
+                            <li><strong>Industrial Non-compliance:</strong> ₹1 lakh - ₹10 lakh + closure</li>
+                            <li><strong>Vehicle Violations:</strong> ₹20,000 impounding fee</li>
+                            <li><strong>Waste Burning:</strong> ₹5,000 - ₹25,000 per incident</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card">
+                        <h3>Surveillance Mechanisms</h3>
+                        <ul>
+                            <li><strong>CCTV Networks:</strong> 500+ cameras at construction sites</li>
+                            <li><strong>Mobile Enforcement Teams:</strong> 50+ teams across NCR</li>
+                            <li><strong>Citizen Reporting:</strong> Mobile app for violation reporting</li>
+                            <li><strong>Automated Sensors:</strong> PM sensors at major sites</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card">
+                        <h3>Satellite Detection</h3>
+                        <ul>
+                            <li><strong>Stubble Burning:</strong> NASA FIRMS daily fire alerts</li>
+                            <li><strong>Landfill Fires:</strong> Thermal anomaly detection</li>
+                            <li><strong>Industrial Emissions:</strong> Sentinel-5P NO2/SO2 plumes</li>
+                            <li><strong>Response Time:</strong> 6-12 hours from detection to action</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card">
+                        <h3>C&D Portal Inspections</h3>
+                        <canvas id="cdInspectionChart"></canvas>
+                        <ul>
+                            <li><strong>Registered Sites:</strong> 5,000+ construction sites</li>
+                            <li><strong>Inspection Frequency:</strong> Weekly for large sites</li>
+                            <li><strong>Compliance Rate:</strong> 60% (2020) → 85% (2025)</li>
+                            <li><strong>Digital Monitoring:</strong> Real-time dust sensor data</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card">
+                        <h3>Transport Emission Checks</h3>
+                        <canvas id="pucComplianceChart"></canvas>
+                        <ul>
+                            <li><strong>PUC Centers:</strong> 1,000+ automated testing centers</li>
+                            <li><strong>Remote Sensing:</strong> On-road emission detection</li>
+                            <li><strong>Compliance Rate:</strong> 75% (2020) → 90% (2025)</li>
+                            <li><strong>Old Vehicle Detection:</strong> ANPR-based identification</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card">
+                        <h3>Landfill Fire Monitoring</h3>
+                        <ul>
+                            <li><strong>Monitored Sites:</strong> 15 major landfills in NCR</li>
+                            <li><strong>Fire Detection:</strong> Thermal cameras + satellite</li>
+                            <li><strong>Response Protocol:</strong> 2-hour firefighting deployment</li>
+                            <li><strong>Prevention:</strong> Daily compaction, soil covering</li>
+                        </ul>
+                    </div>
+
+                    <div class="compliance-card full-width">
+                        <h3>Violation Heatmap (2024-2025)</h3>
+                        <div id="violationHeatmap" style="height: 400px;"></div>
+                        <p class="viz-caption">Geographic distribution of pollution violations across NCR districts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: CROSS-STATE POLLUTION ANALYSIS -->
+            <section id="cross-state" class="dashboard-section">
+                <h2 class="section-title">9. Cross-State Pollution Transfer Analysis</h2>
+
+                <div class="cross-state-grid">
+                    <div class="state-card">
+                        <h3>Punjab → Delhi Stubble Transport</h3>
+                        <canvas id="punjabTransportChart"></canvas>
+                        <ul>
+                            <li><strong>Peak Period:</strong> October 25 - November 15</li>
+                            <li><strong>Fire Events:</strong> 15,000-20,000 annually (down from 35,000 in 2020)</li>
+                            <li><strong>Transport Mechanism:</strong> Northwest winds (3-5 m/s)</li>
+                            <li><strong>Delhi Impact:</strong> 30-40% of PM2.5 during peak days</li>
+                            <li><strong>Travel Time:</strong> 24-48 hours from source to Delhi</li>
+                        </ul>
+                    </div>
+
+                    <div class="state-card">
+                        <h3>Haryana Industrial Plumes</h3>
+                        <canvas id="haryanaTransportChart"></canvas>
+                        <ul>
+                            <li><strong>Major Sources:</strong> Thermal power plants, brick kilns, industries</li>
+                            <li><strong>Districts:</strong> Sonipat, Panipat, Jhajjar, Rohtak</li>
+                            <li><strong>Pollutants:</strong> SO2, NO2, PM from industrial clusters</li>
+                            <li><strong>Delhi Impact:</strong> 15-20% of annual pollution load</li>
+                            <li><strong>Mitigation:</strong> PNG conversion, emission norms enforcement</li>
+                        </ul>
+                    </div>
+
+                    <div class="state-card">
+                        <h3>UP Freight & Kiln Pollution</h3>
+                        <canvas id="upTransportChart"></canvas>
+                        <ul>
+                            <li><strong>Brick Kilns:</strong> 5,000+ kilns in western UP</li>
+                            <li><strong>Freight Corridors:</strong> NH-24, NH-9 heavy vehicle traffic</li>
+                            <li><strong>Pollutants:</strong> PM, SO2 from coal-fired kilns</li>
+                            <li><strong>Delhi Impact:</strong> 10-15% contribution</li>
+                            <li><strong>Policy Response:</strong> Zigzag kiln conversion, freight restrictions</li>
+                        </ul>
+                    </div>
+
+                    <div class="state-card">
+                        <h3>Wind Corridor Effects</h3>
+                        <ul>
+                            <li><strong>Dominant Direction:</strong> Northwest (Oct-Jan), Southeast (Mar-Jun)</li>
+                            <li><strong>High Wind Days:</strong> Better dispersion, lower AQI</li>
+                            <li><strong>Calm Conditions:</strong> Pollution accumulation, AQI spikes</li>
+                            <li><strong>Seasonal Pattern:</strong> Winter stagnation vs summer ventilation</li>
+                        </ul>
+                    </div>
+
+                    <div class="state-card full-width">
+                        <h3>NCR Airshed Behavior</h3>
+                        <ul>
+                            <li><strong>Airshed Concept:</strong> NCR as single atmospheric unit</li>
+                            <li><strong>Internal Mixing:</strong> Pollutants circulate within 300 km radius</li>
+                            <li><strong>External Influence:</strong> 30-40% from outside NCR</li>
+                            <li><strong>Policy Implication:</strong> Requires regional coordination via CAQM</li>
+                            <li><strong>Modeling:</strong> WRF-CMAQ for airshed-scale simulations</li>
+                        </ul>
+                    </div>
+
+                    <div class="state-card full-width">
+                        <h3>Regional Contribution Matrix</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Source Region</th>
+                                    <th>PM2.5 (%)</th>
+                                    <th>NO2 (%)</th>
+                                    <th>SO2 (%)</th>
+                                    <th>Primary Pollutant</th>
+                                    <th>Peak Season</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Delhi (Local)</td>
+                                    <td>60-70%</td>
+                                    <td>75-80%</td>
+                                    <td>50-60%</td>
+                                    <td>Vehicular, Dust</td>
+                                    <td>Year-round</td>
+                                </tr>
+                                <tr>
+                                    <td>Punjab</td>
+                                    <td>15-25%</td>
+                                    <td>5-10%</td>
+                                    <td>5-10%</td>
+                                    <td>Biomass Burning</td>
+                                    <td>Oct-Nov</td>
+                                </tr>
+                                <tr>
+                                    <td>Haryana</td>
+                                    <td>10-15%</td>
+                                    <td>10-15%</td>
+                                    <td>20-30%</td>
+                                    <td>Industrial, Power</td>
+                                    <td>Year-round</td>
+                                </tr>
+                                <tr>
+                                    <td>Uttar Pradesh</td>
+                                    <td>5-10%</td>
+                                    <td>5-10%</td>
+                                    <td>10-15%</td>
+                                    <td>Brick Kilns, Freight</td>
+                                    <td>Winter</td>
+                                </tr>
+                                <tr>
+                                    <td>Rajasthan</td>
+                                    <td>2-5%</td>
+                                    <td>2-5%</td>
+                                    <td>5-10%</td>
+                                    <td>Dust, Industrial</td>
+                                    <td>Summer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: CONCLUSION & ROADMAP -->
+            <section id="conclusion" class="dashboard-section">
+                <h2 class="section-title">10. Conclusion & Policy Roadmap (2026-2030)</h2>
+
+                <div class="conclusion-grid">
+                    <div class="conclusion-card success">
+                        <h3>What Worked (2020-2025)</h3>
+                        <ul>
+                            <li><strong>BS-VI Implementation:</strong> 70-80% per-vehicle emission reduction, 100%
+                                compliance</li>
+                            <li><strong>CAQM Establishment:</strong> Statutory authority enabled regional coordination
+                            </li>
+                            <li><strong>Stubble Burning Control:</strong> 70% reduction in fire events through
+                                mechanization</li>
+                            <li><strong>EV Adoption:</strong> 150,000+ EVs, fastest-growing market in India</li>
+                            <li><strong>Industrial PNG Conversion:</strong> 2,000+ units converted, 40% SO2 reduction
+                            </li>
+                            <li><strong>GRAP Framework:</strong> Prevented severe pollution episodes 15+ times</li>
+                            <li><strong>Monitoring Expansion:</strong> 85+ stations, comprehensive coverage</li>
+                            <li><strong>Technology Integration:</strong> Satellite surveillance, AI forecasting
+                                operational</li>
+                        </ul>
+                    </div>
+
+                    <div class="conclusion-card failure">
+                        <h3>What Failed / Underperformed</h3>
+                        <ul>
+                            <li><strong>PM Levels:</strong> PM2.5 +38%, PM10 +20% despite policies (activity surge)</li>
+                            <li><strong>NO2 Increase:</strong> +81% due to post-COVID traffic rebound</li>
+                            <li><strong>Construction Dust:</strong> Enforcement gaps, compliance challenges</li>
+                            <li><strong>Waste Burning:</strong> Persistent violations despite bans</li>
+                            <li><strong>Seasonal Spikes:</strong> Winter pollution episodes remain severe</li>
+                            <li><strong>Regional Coordination:</strong> Interstate enforcement inconsistencies</li>
+                            <li><strong>Fleet Turnover:</strong> Slow replacement of old vehicles</li>
+                            <li><strong>Public Transport:</strong> Insufficient capacity expansion</li>
+                        </ul>
+                    </div>
+
+                    <div class="conclusion-card reform">
+                        <h3>What Needs Reform</h3>
+                        <ul>
+                            <li><strong>Dust Control:</strong> Mandatory real-time sensors at all sites >1000 sqm</li>
+                            <li><strong>Enforcement Technology:</strong> AI-based violation detection, automated
+                                penalties</li>
+                            <li><strong>Regional Framework:</strong> Harmonized emission standards across NCR states
+                            </li>
+                            <li><strong>Economic Instruments:</strong> Pollution tax, emissions trading system</li>
+                            <li><strong>Public Transport:</strong> 3x capacity expansion, integrated mobility</li>
+                            <li><strong>Waste Management:</strong> 100% door-to-door collection, waste-to-energy</li>
+                            <li><strong>Green Infrastructure:</strong> Urban forests, green corridors</li>
+                            <li><strong>Behavioral Change:</strong> Public awareness, citizen engagement</li>
+                        </ul>
+                    </div>
+
+                    <div class="conclusion-card roadmap">
+                        <h3>Future Policy Roadmap (2026-2030)</h3>
+                        <h4>Short-term (2026-2027)</h4>
+                        <ul>
+                            <li>50% EV share in new registrations</li>
+                            <li>Complete electrification of public transport</li>
+                            <li>Hyperlocal AQ monitoring (1 km resolution)</li>
+                            <li>Zero-waste NCR initiative</li>
+                        </ul>
+                        <h4>Medium-term (2028-2030)</h4>
+                        <ul>
+                            <li>30% overall emission reduction from 2020 baseline</li>
+                            <li>AI-driven dynamic traffic management</li>
+                            <li>Regional emissions trading system</li>
+                            <li>100% renewable energy for public infrastructure</li>
+                        </ul>
+                        <h4>AI & Technology Integration</h4>
+                        <ul>
+                            <li><strong>Predictive Analytics:</strong> 14-day AQI forecasts with 90% accuracy</li>
+                            <li><strong>Smart GRAP:</strong> AI-optimized intervention timing</li>
+                            <li><strong>Digital Twin:</strong> NCR air quality simulation platform</li>
+                            <li><strong>Blockchain:</strong> Transparent emission credit trading</li>
+                            <li><strong>IoT Sensors:</strong> 10,000+ low-cost sensors for hyperlocal monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="final-assessment">
+                    <h3>Final Assessment</h3>
+                    <p>The 2020-2025 period established a robust institutional and policy framework for air quality
+                        management in Delhi-NCR. While ambient pollution levels have not declined as desired, the
+                        policies have prevented further deterioration despite rapid urbanization and post-COVID economic
+                        recovery. The structural changes implemented—BS-VI standards, CAQM coordination, EV transition,
+                        industrial fuel conversion—provide a strong foundation for future improvements.</p>
+                    <p><strong>Key Insight:</strong> Policy effectiveness is constrained by meteorological factors,
+                        enforcement capacity, and regional coordination challenges. Success requires sustained
+                        implementation, enhanced technology deployment, economic instruments, and behavioral change over
+                        the next decade.</p>
+                    <p><strong>Recommendation:</strong> Transition from reactive (GRAP) to proactive (continuous
+                        emission reduction) strategies, leveraging AI, IoT, and economic incentives to achieve 30-50%
+                        pollution reduction by 2030.</p>
+                </div>
+            </section>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>&copy; 2025 Delhi-NCR Air Quality Management Dashboard | Government of India</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="dashboard_data.js"></script>
+    <script src="dashboard_charts.js"></script>
+    <script src="dashboard_interactions.js"></script>
+</body>
+
+</html>

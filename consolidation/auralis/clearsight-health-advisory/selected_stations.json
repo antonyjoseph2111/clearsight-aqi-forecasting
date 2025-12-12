@@ -1,0 +1,919 @@
+[
+  {
+    "station_id": "Alipur, Delhi - DPCC",
+    "station_name": "Alipur",
+    "city": "",
+    "state": "",
+    "latitude": 28.815329,
+    "longitude": 77.15301,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "280",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Anand Vihar, Delhi - DPCC",
+    "station_name": "Anand Vihar",
+    "city": "",
+    "state": "",
+    "latitude": 28.647622,
+    "longitude": 77.315809,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "312",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Aya Nagar, Delhi - IMD",
+    "station_name": "Aya Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 28.4706914,
+    "longitude": 77.1099364,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "239",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Bawana, Delhi - DPCC",
+    "station_name": "Bawana",
+    "city": "",
+    "state": "",
+    "latitude": 28.7762,
+    "longitude": 77.051074,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "338",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Burari Crossing, Delhi - IMD",
+    "station_name": "Burari Crossing",
+    "city": "",
+    "state": "",
+    "latitude": 28.7256504,
+    "longitude": 77.2011573,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "286",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "CRRI Mathura Road, Delhi - IMD",
+    "station_name": "CRRI Mathura Road",
+    "city": "",
+    "state": "",
+    "latitude": 28.5512005,
+    "longitude": 77.2735737,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "261",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "IGI Airport (T3), Delhi - IMD",
+    "station_name": "IGI Airport (T3)",
+    "city": "",
+    "state": "",
+    "latitude": 28.5627763,
+    "longitude": 77.1180053,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "210",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "IHBAS, Dilshad Garden, Delhi - CPCB",
+    "station_name": "IHBAS",
+    "city": "",
+    "state": "",
+    "latitude": 28.6811736,
+    "longitude": 77.3025234,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "290",
+    "predominant_parameter": "PM10",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "IIT Delhi, Delhi - IITM",
+    "station_name": "IIT Delhi",
+    "city": "",
+    "state": "",
+    "latitude": 28.54246,
+    "longitude": 77.191651,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "253",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "ITO, Delhi - CPCB",
+    "station_name": "ITO",
+    "city": "",
+    "state": "",
+    "latitude": 28.628624,
+    "longitude": 77.24106,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "290",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Lodhi Road, Delhi - IITM",
+    "station_name": "Lodhi Road",
+    "city": "",
+    "state": "",
+    "latitude": 28.588333,
+    "longitude": 77.221667,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "256",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "SO2": ""
+    }
+  },
+  {
+    "station_id": "Lodhi Road, Delhi - IMD",
+    "station_name": "Lodhi Road",
+    "city": "",
+    "state": "",
+    "latitude": 28.5918245,
+    "longitude": 77.2273074,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "253",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Major Dhyan Chand National Stadium, Delhi - DPCC",
+    "station_name": "Major Dhyan Chand National Stadium",
+    "city": "",
+    "state": "",
+    "latitude": 28.611281,
+    "longitude": 77.237738,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "249",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Mandir Marg, Delhi - DPCC",
+    "station_name": "Mandir Marg",
+    "city": "",
+    "state": "",
+    "latitude": 28.636429,
+    "longitude": 77.201067,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "203",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Narela, Delhi - DPCC",
+    "station_name": "Narela",
+    "city": "",
+    "state": "",
+    "latitude": 28.822836,
+    "longitude": 77.101981,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "298",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Nehru Nagar, Delhi - DPCC",
+    "station_name": "Nehru Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 28.56789,
+    "longitude": 77.250515,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "313",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "North Campus, DU, Delhi - IMD",
+    "station_name": "North Campus",
+    "city": "",
+    "state": "",
+    "latitude": 28.6573814,
+    "longitude": 77.1585447,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "302",
+    "predominant_parameter": "OZONE",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Okhla Phase-2, Delhi - DPCC",
+    "station_name": "Okhla Phase-2",
+    "city": "",
+    "state": "",
+    "latitude": 28.530785,
+    "longitude": 77.271255,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "288",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Patparganj, Delhi - DPCC",
+    "station_name": "Patparganj",
+    "city": "",
+    "state": "",
+    "latitude": 28.623763,
+    "longitude": 77.287209,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "299",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Punjabi Bagh, Delhi - DPCC",
+    "station_name": "Punjabi Bagh",
+    "city": "",
+    "state": "",
+    "latitude": 28.674045,
+    "longitude": 77.131023,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "300",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Pusa, Delhi - DPCC",
+    "station_name": "Pusa",
+    "city": "",
+    "state": "",
+    "latitude": 28.639652,
+    "longitude": 77.146275,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "324",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Pusa, Delhi - IMD",
+    "station_name": "Pusa",
+    "city": "",
+    "state": "",
+    "latitude": 28.63611,
+    "longitude": 77.173332,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "266",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "R K Puram, Delhi - DPCC",
+    "station_name": "R K Puram",
+    "city": "",
+    "state": "",
+    "latitude": 28.563262,
+    "longitude": 77.186937,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "306",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Rohini, Delhi - DPCC",
+    "station_name": "Rohini",
+    "city": "",
+    "state": "",
+    "latitude": 28.732528,
+    "longitude": 77.11992,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "319",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sonia Vihar, Delhi - DPCC",
+    "station_name": "Sonia Vihar",
+    "city": "",
+    "state": "",
+    "latitude": 28.710508,
+    "longitude": 77.249485,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "296",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sri Aurobindo Marg, Delhi - DPCC",
+    "station_name": "Sri Aurobindo Marg",
+    "city": "",
+    "state": "",
+    "latitude": 28.531346,
+    "longitude": 77.190156,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "291",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Vivek Vihar, Delhi - DPCC",
+    "station_name": "Vivek Vihar",
+    "city": "",
+    "state": "",
+    "latitude": 28.672342,
+    "longitude": 77.31526,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "320",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Wazirpur, Delhi - DPCC",
+    "station_name": "Wazirpur",
+    "city": "",
+    "state": "",
+    "latitude": 28.699793,
+    "longitude": 77.165453,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "319",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Mini Secretariat, Charkhi Dadri - HSPCB",
+    "station_name": "Mini Secretariat",
+    "city": "",
+    "state": "",
+    "latitude": 28.593883,
+    "longitude": 76.270653,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "239",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Municipal Corporation Office, Dharuhera -  HSPCB",
+    "station_name": "Municipal Corporation Office",
+    "city": "",
+    "state": "",
+    "latitude": 28.2068,
+    "longitude": 76.7997,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "308",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "New Industrial Town, Faridabad - HSPCB",
+    "station_name": "New Industrial Town",
+    "city": "",
+    "state": "",
+    "latitude": 28.39072,
+    "longitude": 77.30059,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "230",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sector 11, Faridabad - HSPCB",
+    "station_name": "Sector 11",
+    "city": "",
+    "state": "",
+    "latitude": 28.376058,
+    "longitude": 77.315741,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "138",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sector 30, Faridabad - HSPCB",
+    "station_name": "Sector 30",
+    "city": "",
+    "state": "",
+    "latitude": 28.4417,
+    "longitude": 77.3217,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "211",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Yamunapuram, Bulandshahr - UPPCB",
+    "station_name": "Yamunapuram",
+    "city": "",
+    "state": "",
+    "latitude": 28.406963,
+    "longitude": 77.849831,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "177",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Indirapuram, Ghaziabad - UPPCB",
+    "station_name": "Indirapuram",
+    "city": "",
+    "state": "",
+    "latitude": 28.646233,
+    "longitude": 77.358075,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "251",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Loni, Ghaziabad - UPPCB",
+    "station_name": "Loni",
+    "city": "",
+    "state": "",
+    "latitude": 28.757294,
+    "longitude": 77.278792,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "330",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sanjay Nagar, Ghaziabad - UPPCB",
+    "station_name": "Sanjay Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 28.685382,
+    "longitude": 77.453839,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "267",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Knowledge Park - III, Greater Noida - UPPCB",
+    "station_name": "Knowledge Park - III",
+    "city": "",
+    "state": "",
+    "latitude": 28.47272,
+    "longitude": 77.482,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "217",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Knowledge Park - V, Greater Noida - UPPCB",
+    "station_name": "Knowledge Park - V",
+    "city": "",
+    "state": "",
+    "latitude": 28.557054,
+    "longitude": 77.453663,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "296",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Anand Vihar, Hapur - UPPCB",
+    "station_name": "Anand Vihar",
+    "city": "",
+    "state": "",
+    "latitude": 28.725645,
+    "longitude": 77.749675,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "134",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Nehru Nagar, Kanpur - UPPCB",
+    "station_name": "Nehru Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 26.4703136,
+    "longitude": 80.3229863,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "122",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Ganga Nagar, Meerut - UPPCB",
+    "station_name": "Ganga Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 28.999264,
+    "longitude": 77.7590354,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "175",
+    "predominant_parameter": "PM10",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Jai Bhim Nagar, Meerut - UPPCB",
+    "station_name": "Jai Bhim Nagar",
+    "city": "",
+    "state": "",
+    "latitude": 28.9535882,
+    "longitude": 77.7622941,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "201",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Pallavpuram Phase 2, Meerut - UPPCB",
+    "station_name": "Pallavpuram Phase 2",
+    "city": "",
+    "state": "",
+    "latitude": 29.06351,
+    "longitude": 77.709723,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": null,
+    "predominant_parameter": null,
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "New Mandi, Muzaffarnagar - UPPCB",
+    "station_name": "New Mandi",
+    "city": "",
+    "state": "",
+    "latitude": 29.4723508,
+    "longitude": 77.7194031,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "276",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sector - 125, Noida - UPPCB",
+    "station_name": "Sector - 125",
+    "city": "",
+    "state": "",
+    "latitude": 28.5447608,
+    "longitude": 77.3231257,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "310",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "NH3": "",
+      "SO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  },
+  {
+    "station_id": "Sector - 62, Noida - IMD",
+    "station_name": "Sector - 62",
+    "city": "",
+    "state": "",
+    "latitude": 28.6245479,
+    "longitude": 77.3577104,
+    "last_update": "09-12-2025 12:00:00",
+    "aqi": "255",
+    "predominant_parameter": "PM2.5",
+    "pollutants": {
+      "PM2.5": "",
+      "PM10": "",
+      "NO2": "",
+      "CO": "",
+      "OZONE": ""
+    }
+  }
+]

@@ -1,0 +1,4 @@
+File 1:
+['Alipur_Delhi', 'Anand_Vihar_Delhi', 'Ashok_Vihar_Delhi', 'Bawana_Delhi', 'Chandni_Chowk_Delhi', 'DTU_Delhi', 'Dr._Karni_Singh_Shooting_Range_Delhi', 'Dwarka-Sector_8_Delhi', 'IHBAS_Dilshad_Garden_Delhi', 'Jahangirpuri_Delhi', 'Jawaharlal_Nehru_Stadium_Delhi', 'Lodhi_Road_Delhi_IITM', 'Major_Dhyan_Chand_National_Stadium_Delhi', 'Mandir_Marg_Delhi', 'Mundka_Delhi', 'NSIT_Dwarka_Delhi', 'Najafgarh_Delhi', 'Narela_Delhi', 'Nehru_Nagar_Delhi', 'Okhla_Phase-2_Delhi', 'Patparganj_Delhi', 'Punjabi_Bagh_Delhi', 'Pusa_Delhi_DPCC', 'R_K_Puram_Delhi', 'Rohini_Delhi', 'Shadipur_Delhi', 'Sirifort_Delhi', 'Sonia_Vihar_Delhi', 'Sri_Aurobindo_Marg_Delhi', 'Vivek_Vihar_Delhi', 'Wazirpur_Delhi']
+File 2:
+['Anand', 'Anand_Vihar', 'Ashok', 'CRRI_Mathura_Road', 'IGI', 'Mundka', 'Najafgarh', 'Wazirpur']
