@@ -4,14 +4,14 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDWjCO7bdLGwITw0SpG0gRgmFND31mzn-o",
-    authDomain: "clear-sight-auralis.firebaseapp.com",
-    databaseURL: "https://clear-sight-auralis-default-rtdb.firebaseio.com",
-    projectId: "clear-sight-auralis",
-    storageBucket: "clear-sight-auralis.firebasestorage.app",
-    messagingSenderId: "87017226699",
-    appId: "1:87017226699:web:9a924c5bdd85e119cb764e",
-    measurementId: "G-0RME42YDSS"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Initialize Firebase
