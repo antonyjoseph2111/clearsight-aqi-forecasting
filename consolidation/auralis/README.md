@@ -84,13 +84,13 @@ graph TD
 
 We are the proud **Winners of Smart India Hackathon 2024 (SIH25216)**.
 
-| **Antony Joseph** | **[Member Name]** | **[Member Name]** |
+| **Antony Joseph** | **Nate Kurian** | **Aparna Anil Nair** |
 | :---: | :---: | :---: |
-| 🧑‍💻 Team Lead & AI Architect | 🚀 Role | 🎨 Role |
+| 🧑‍💻 Team Leader | 🚀 Member | 🎨 Member |
 
-| **[Member Name]** | **[Member Name]** | **[Member Name]** |
+| **George Tomson** | **Athul Lal SP** | **Divya Tresa Thomas** |
 | :---: | :---: | :---: |
-| 🔧 Role | 📊 Role | 💡 Role |
+| 🔧 Member | 📊 Member | 💡 Member |
 
 ---
 
