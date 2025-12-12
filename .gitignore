@@ -1,0 +1,38 @@
+
+# .gitignore for ClearSight AQI Forecasting
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Javascript/Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Firebase
+.firebase/
+firebase-debug.log
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large Data Files (Excluded from Repo)
+AQI_System/merged_aqi_dataset.csv
+AQI_System/deep_model_data/*.npz
+AQI_System/deep_model_data/test_data.npz
+AQI_System/deep_model_data/train_data.npz
+AQI_System/deep_model_data/val_data.npz
+AQI_System/deep_model_data/dl_ready.npz
+

@@ -1,0 +1,1272 @@
+[
+    {
+        "Station_ID": "Alipur_Delhi",
+        "RSS_Station_Name": "Alipur, Delhi - DPCC",
+        "Latitude": "28.815329",
+        "Longitude": "77.153010",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 280.0,
+                "SubIndex": 374.0
+            },
+            "PM10": {
+                "Avg": 215.0,
+                "SubIndex": 267.0
+            },
+            "NO2": {
+                "Avg": 50.0,
+                "SubIndex": 47.0
+            },
+            "NH3": {
+                "Avg": 7.0,
+                "SubIndex": 7.0
+            },
+            "SO2": {
+                "Avg": 11.0,
+                "SubIndex": 7.0
+            },
+            "CO": {
+                "Avg": 69.0,
+                "SubIndex": 66.0
+            },
+            "OZONE": {
+                "Avg": 20.0,
+                "SubIndex": 19.0
+            }
+        },
+        "AQI_Value": "280",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Anand_Vihar_Delhi",
+        "RSS_Station_Name": "Anand Vihar, Delhi - DPCC",
+        "Latitude": "28.647622",
+        "Longitude": "77.3158090",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 320.0,
+                "SubIndex": 332.0
+            },
+            "PM10": {
+                "Avg": 253.0,
+                "SubIndex": 205.0
+            },
+            "NO2": {
+                "Avg": 117.0,
+                "SubIndex": 107.0
+            },
+            "NH3": {
+                "Avg": 14.0,
+                "SubIndex": 14.0
+            },
+            "SO2": {
+                "Avg": 43.0,
+                "SubIndex": 32.0
+            },
+            "CO": {
+                "Avg": 105.0,
+                "SubIndex": 101.0
+            },
+            "OZONE": {
+                "Avg": 18.0,
+                "SubIndex": 17.0
+            }
+        },
+        "AQI_Value": "320",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Ashok_Vihar_Delhi",
+        "RSS_Station_Name": "Ashok Vihar, Delhi - DPCC",
+        "Latitude": "28.695381",
+        "Longitude": "77.181665",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 305.0,
+                "SubIndex": 316.0
+            },
+            "PM10": {
+                "Avg": 233.0,
+                "SubIndex": 177.0
+            },
+            "NO2": {
+                "Avg": 81.0,
+                "SubIndex": 56.0
+            },
+            "NH3": {
+                "Avg": 1.0,
+                "SubIndex": 1.0
+            },
+            "SO2": {
+                "Avg": 17.0,
+                "SubIndex": 16.0
+            },
+            "CO": {
+                "Avg": 58.0,
+                "SubIndex": 37.0
+            },
+            "OZONE": {
+                "Avg": 24.0,
+                "SubIndex": 37.0
+            }
+        },
+        "AQI_Value": "305",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Bawana_Delhi",
+        "RSS_Station_Name": "Bawana, Delhi - DPCC",
+        "Latitude": "28.776200",
+        "Longitude": "77.051074",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 342.0,
+                "SubIndex": 365.0
+            },
+            "PM10": {
+                "Avg": 238.0,
+                "SubIndex": 194.0
+            },
+            "NO2": {
+                "Avg": 34.0,
+                "SubIndex": 29.0
+            },
+            "NH3": {
+                "Avg": 5.0,
+                "SubIndex": 5.0
+            },
+            "SO2": {
+                "Avg": 17.0,
+                "SubIndex": 24.0
+            },
+            "CO": {
+                "Avg": 75.0,
+                "SubIndex": 64.0
+            },
+            "OZONE": {
+                "Avg": 13.0,
+                "SubIndex": 12.0
+            }
+        },
+        "AQI_Value": "342",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "CRRI_Mathura_Road_Delhi",
+        "RSS_Station_Name": "CRRI Mathura Road, Delhi - IMD",
+        "Latitude": "28.5512005",
+        "Longitude": "77.2735737",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 271.0,
+                "SubIndex": 250.0
+            },
+            "PM10": {
+                "Avg": 185.0,
+                "SubIndex": 151.0
+            },
+            "NO2": {
+                "Avg": 42.0,
+                "SubIndex": 41.0
+            },
+            "CO": {
+                "Avg": 45.0,
+                "SubIndex": 31.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 13.0
+            }
+        },
+        "AQI_Value": "271",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Chandni_Chowk_Delhi",
+        "RSS_Station_Name": "Chandni Chowk, Delhi - IITM",
+        "Latitude": "28.656756",
+        "Longitude": "77.227234",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 286.0,
+                "SubIndex": 312.0
+            },
+            "PM10": {
+                "Avg": 331.0,
+                "SubIndex": 348.0
+            },
+            "NO2": {
+                "Avg": 53.0,
+                "SubIndex": 69.0
+            },
+            "NH3": {
+                "Avg": 8.0,
+                "SubIndex": 9.0
+            },
+            "CO": {
+                "Avg": 56.0,
+                "SubIndex": 50.0
+            }
+        },
+        "AQI_Value": "331",
+        "Prominent_Pollutant": "PM10"
+    },
+    {
+        "Station_ID": "DTU_Delhi",
+        "RSS_Station_Name": "DTU, Delhi - CPCB",
+        "Latitude": "28.7500499",
+        "Longitude": "77.1112615",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 307.0,
+                "SubIndex": 347.0
+            },
+            "PM10": {
+                "Avg": 202.0,
+                "SubIndex": 177.0
+            },
+            "NO2": {
+                "Avg": 56.0,
+                "SubIndex": 46.0
+            },
+            "NH3": {
+                "Avg": 11.0,
+                "SubIndex": 14.0
+            },
+            "SO2": {
+                "Avg": 30.0,
+                "SubIndex": 28.0
+            },
+            "CO": {
+                "Avg": 45.0,
+                "SubIndex": 38.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 14.0
+            }
+        },
+        "AQI_Value": "307",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Dr._Karni_Singh_Shooting_Range_Delhi",
+        "RSS_Station_Name": "Dr. Karni Singh Shooting Range, Delhi - DPCC",
+        "Latitude": "28.498571",
+        "Longitude": "77.264840",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 312.0,
+                "SubIndex": 307.0
+            },
+            "PM10": {
+                "Avg": 222.0,
+                "SubIndex": 162.0
+            },
+            "NO2": {
+                "Avg": 103.0,
+                "SubIndex": 85.0
+            },
+            "NH3": {
+                "Avg": 10.0,
+                "SubIndex": 10.0
+            },
+            "SO2": {
+                "Avg": 15.0,
+                "SubIndex": 14.0
+            },
+            "CO": {
+                "Avg": 54.0,
+                "SubIndex": 44.0
+            },
+            "OZONE": {
+                "Avg": 26.0,
+                "SubIndex": 28.0
+            }
+        },
+        "AQI_Value": "312",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Dwarka-Sector_8_Delhi",
+        "RSS_Station_Name": "Dwarka-Sector 8, Delhi - DPCC ",
+        "Latitude": "28.5710274",
+        "Longitude": "77.0719006",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 316.0,
+                "SubIndex": 305.0
+            },
+            "PM10": {
+                "Avg": 223.0,
+                "SubIndex": 161.0
+            },
+            "NO2": {
+                "Avg": 94.0,
+                "SubIndex": 77.0
+            },
+            "NH3": {
+                "Avg": 19.0,
+                "SubIndex": 18.0
+            },
+            "SO2": {
+                "Avg": 29.0,
+                "SubIndex": 28.0
+            },
+            "CO": {
+                "Avg": 57.0,
+                "SubIndex": 37.0
+            },
+            "OZONE": {
+                "Avg": 7.0,
+                "SubIndex": 5.0
+            }
+        },
+        "AQI_Value": "316",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "IGI_Airport_Delhi",
+        "RSS_Station_Name": "IGI Airport (T3), Delhi - IMD",
+        "Latitude": "28.5627763",
+        "Longitude": "77.1180053",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 218.0,
+                "SubIndex": 237.0
+            },
+            "PM10": {
+                "Avg": 182.0,
+                "SubIndex": 165.0
+            },
+            "NO2": {
+                "Avg": 94.0,
+                "SubIndex": 90.0
+            },
+            "CO": {
+                "Avg": 43.0,
+                "SubIndex": 40.0
+            },
+            "OZONE": {
+                "Avg": 12.0,
+                "SubIndex": 12.0
+            }
+        },
+        "AQI_Value": "218",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Jahangirpuri_Delhi",
+        "RSS_Station_Name": "Jahangirpuri, Delhi - DPCC",
+        "Latitude": "28.732820",
+        "Longitude": "77.170633",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 331.0,
+                "SubIndex": 333.0
+            },
+            "PM10": {
+                "Avg": 254.0,
+                "SubIndex": 185.0
+            },
+            "NO2": {
+                "Avg": 92.0,
+                "SubIndex": 73.0
+            },
+            "NH3": {
+                "Avg": 9.0,
+                "SubIndex": 9.0
+            },
+            "SO2": {
+                "Avg": 32.0,
+                "SubIndex": 19.0
+            },
+            "CO": {
+                "Avg": 68.0,
+                "SubIndex": 48.0
+            },
+            "OZONE": {
+                "Avg": 22.0,
+                "SubIndex": 32.0
+            }
+        },
+        "AQI_Value": "331",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Jawaharlal_Nehru_Stadium_Delhi",
+        "RSS_Station_Name": "Jawaharlal Nehru Stadium, Delhi - DPCC",
+        "Latitude": "28.580280",
+        "Longitude": "77.233829",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 287.0,
+                "SubIndex": 306.0
+            },
+            "PM10": {
+                "Avg": 222.0,
+                "SubIndex": 177.0
+            },
+            "NO2": {
+                "Avg": 100.0,
+                "SubIndex": 77.0
+            },
+            "NH3": {
+                "Avg": 5.0,
+                "SubIndex": 5.0
+            },
+            "SO2": {
+                "Avg": 9.0,
+                "SubIndex": 5.0
+            },
+            "CO": {
+                "Avg": 66.0,
+                "SubIndex": 41.0
+            },
+            "OZONE": {
+                "Avg": 15.0,
+                "SubIndex": 21.0
+            }
+        },
+        "AQI_Value": "287",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Lodhi_Road_Delhi_IITM",
+        "RSS_Station_Name": "Lodhi Road, Delhi - IITM",
+        "Latitude": "28.588333",
+        "Longitude": "77.221667",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 269.0,
+                "SubIndex": 241.0
+            },
+            "PM10": {
+                "Avg": 160.0,
+                "SubIndex": 140.0
+            },
+            "SO2": {
+                "Avg": 11.0,
+                "SubIndex": 18.0
+            }
+        },
+        "AQI_Value": "269",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Lodhi_Road_Delhi_IITM",
+        "RSS_Station_Name": "Lodhi Road, Delhi - IMD",
+        "Latitude": "28.5918245",
+        "Longitude": "77.2273074",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 262.0,
+                "SubIndex": 294.0
+            },
+            "PM10": {
+                "Avg": 191.0,
+                "SubIndex": 151.0
+            },
+            "NO2": {
+                "Avg": 29.0,
+                "SubIndex": 23.0
+            },
+            "CO": {
+                "Avg": 32.0,
+                "SubIndex": 23.0
+            },
+            "OZONE": {
+                "Avg": 7.0,
+                "SubIndex": 9.0
+            }
+        },
+        "AQI_Value": "262",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Major_Dhyan_Chand_National_Stadium_Delhi",
+        "RSS_Station_Name": "Major Dhyan Chand National Stadium, Delhi - DPCC",
+        "Latitude": "28.611281",
+        "Longitude": "77.237738",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 265.0,
+                "SubIndex": 257.0
+            },
+            "PM10": {
+                "Avg": 221.0,
+                "SubIndex": 171.0
+            },
+            "NO2": {
+                "Avg": 102.0,
+                "SubIndex": 95.0
+            },
+            "NH3": {
+                "Avg": 22.0,
+                "SubIndex": 22.0
+            },
+            "SO2": {
+                "Avg": 24.0,
+                "SubIndex": 20.0
+            },
+            "CO": {
+                "Avg": 76.0,
+                "SubIndex": 44.0
+            },
+            "OZONE": {
+                "Avg": 2.0,
+                "SubIndex": 4.0
+            }
+        },
+        "AQI_Value": "265",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Mandir_Marg_Delhi",
+        "RSS_Station_Name": "Mandir Marg, Delhi - DPCC",
+        "Latitude": "28.636429",
+        "Longitude": "77.201067",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 225.0,
+                "SubIndex": 200.0
+            },
+            "PM10": {
+                "Avg": 204.0,
+                "SubIndex": 159.0
+            },
+            "NO2": {
+                "Avg": 90.0,
+                "SubIndex": 79.0
+            },
+            "NH3": {
+                "Avg": 7.0,
+                "SubIndex": 7.0
+            },
+            "SO2": {
+                "Avg": 91.0,
+                "SubIndex": 102.0
+            },
+            "CO": {
+                "Avg": 56.0,
+                "SubIndex": 26.0
+            },
+            "OZONE": {
+                "Avg": 4.0,
+                "SubIndex": 3.0
+            }
+        },
+        "AQI_Value": "225",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Mundka_Delhi",
+        "RSS_Station_Name": "Mundka, Delhi - DPCC",
+        "Latitude": "28.684678",
+        "Longitude": "77.076574",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 320.0,
+                "SubIndex": 334.0
+            },
+            "PM10": {
+                "Avg": 285.0,
+                "SubIndex": 211.0
+            },
+            "NO2": {
+                "Avg": 83.0,
+                "SubIndex": 72.0
+            },
+            "NH3": {
+                "Avg": 12.0,
+                "SubIndex": 12.0
+            },
+            "SO2": {
+                "Avg": 12.0,
+                "SubIndex": 6.0
+            },
+            "CO": {
+                "Avg": 62.0,
+                "SubIndex": 48.0
+            },
+            "OZONE": {
+                "Avg": 6.0,
+                "SubIndex": 10.0
+            }
+        },
+        "AQI_Value": "320",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "NSIT_Dwarka_Delhi",
+        "RSS_Station_Name": "NSIT Dwarka, Delhi - CPCB",
+        "Latitude": "28.60909",
+        "Longitude": "77.0325413",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 238.0,
+                "SubIndex": 159.0
+            },
+            "PM10": {
+                "Avg": 245.0,
+                "SubIndex": 185.0
+            },
+            "NO2": {
+                "Avg": 69.0,
+                "SubIndex": 57.0
+            },
+            "NH3": {
+                "Avg": 18.0,
+                "SubIndex": 15.0
+            },
+            "SO2": {
+                "Avg": 6.0,
+                "SubIndex": 4.0
+            },
+            "CO": {
+                "Avg": 67.0,
+                "SubIndex": 72.0
+            },
+            "OZONE": {
+                "Avg": 10.0,
+                "SubIndex": 9.0
+            }
+        },
+        "AQI_Value": "245",
+        "Prominent_Pollutant": "PM10"
+    },
+    {
+        "Station_ID": "Najafgarh_Delhi",
+        "RSS_Station_Name": "Najafgarh, Delhi - DPCC",
+        "Latitude": "28.570173",
+        "Longitude": "76.933762",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 281.0,
+                "SubIndex": 260.0
+            },
+            "PM10": {
+                "Avg": 160.0,
+                "SubIndex": 137.0
+            },
+            "NO2": {
+                "Avg": 74.0,
+                "SubIndex": 66.0
+            },
+            "NH3": {
+                "Avg": 17.0,
+                "SubIndex": 16.0
+            },
+            "SO2": {
+                "Avg": 29.0,
+                "SubIndex": 21.0
+            },
+            "CO": {
+                "Avg": 47.0,
+                "SubIndex": 40.0
+            },
+            "OZONE": {
+                "Avg": 4.0,
+                "SubIndex": 4.0
+            }
+        },
+        "AQI_Value": "281",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Narela_Delhi",
+        "RSS_Station_Name": "Narela, Delhi - DPCC",
+        "Latitude": "28.822836",
+        "Longitude": "77.101981",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 298.0,
+                "SubIndex": 353.0
+            },
+            "PM10": {
+                "Avg": 207.0,
+                "SubIndex": 215.0
+            },
+            "NO2": {
+                "Avg": 49.0,
+                "SubIndex": 29.0
+            },
+            "NH3": {
+                "Avg": 7.0,
+                "SubIndex": 7.0
+            },
+            "SO2": {
+                "Avg": 14.0,
+                "SubIndex": 8.0
+            },
+            "CO": {
+                "Avg": 51.0,
+                "SubIndex": 51.0
+            },
+            "OZONE": {
+                "Avg": 24.0,
+                "SubIndex": 29.0
+            }
+        },
+        "AQI_Value": "298",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Nehru_Nagar_Delhi",
+        "RSS_Station_Name": "Nehru Nagar, Delhi - DPCC",
+        "Latitude": "28.567890",
+        "Longitude": "77.250515",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 325.0,
+                "SubIndex": 342.0
+            },
+            "PM10": {
+                "Avg": 236.0,
+                "SubIndex": 192.0
+            },
+            "NO2": {
+                "Avg": 71.0,
+                "SubIndex": 83.0
+            },
+            "NH3": {
+                "Avg": 20.0,
+                "SubIndex": 18.0
+            },
+            "SO2": {
+                "Avg": 10.0,
+                "SubIndex": 2.0
+            },
+            "CO": {
+                "Avg": 110.0,
+                "SubIndex": 109.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 4.0
+            }
+        },
+        "AQI_Value": "325",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Okhla_Phase-2_Delhi",
+        "RSS_Station_Name": "Okhla Phase-2, Delhi - DPCC",
+        "Latitude": "28.530785",
+        "Longitude": "77.271255",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 294.0,
+                "SubIndex": 309.0
+            },
+            "PM10": {
+                "Avg": 216.0,
+                "SubIndex": 171.0
+            },
+            "NO2": {
+                "Avg": 163.0,
+                "SubIndex": 131.0
+            },
+            "NH3": {
+                "Avg": 13.0,
+                "SubIndex": 12.0
+            },
+            "SO2": {
+                "Avg": 11.0,
+                "SubIndex": 9.0
+            },
+            "CO": {
+                "Avg": 101.0,
+                "SubIndex": 82.0
+            },
+            "OZONE": {
+                "Avg": 17.0,
+                "SubIndex": 25.0
+            }
+        },
+        "AQI_Value": "294",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Patparganj_Delhi",
+        "RSS_Station_Name": "Patparganj, Delhi - DPCC",
+        "Latitude": "28.623763",
+        "Longitude": "77.287209",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 307.0,
+                "SubIndex": 312.0
+            },
+            "PM10": {
+                "Avg": 213.0,
+                "SubIndex": 157.0
+            },
+            "NO2": {
+                "Avg": 98.0,
+                "SubIndex": 86.0
+            },
+            "NH3": {
+                "Avg": 12.0,
+                "SubIndex": 11.0
+            },
+            "SO2": {
+                "Avg": 9.0,
+                "SubIndex": 6.0
+            },
+            "CO": {
+                "Avg": 53.0,
+                "SubIndex": 16.0
+            },
+            "OZONE": {
+                "Avg": 4.0,
+                "SubIndex": 4.0
+            }
+        },
+        "AQI_Value": "307",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Punjabi_Bagh_Delhi",
+        "RSS_Station_Name": "Punjabi Bagh, Delhi - DPCC",
+        "Latitude": "28.674045",
+        "Longitude": "77.131023",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 305.0,
+                "SubIndex": 332.0
+            },
+            "PM10": {
+                "Avg": 233.0,
+                "SubIndex": 192.0
+            },
+            "NO2": {
+                "Avg": 47.0,
+                "SubIndex": 29.0
+            },
+            "NH3": {
+                "Avg": 6.0,
+                "SubIndex": 5.0
+            },
+            "SO2": {
+                "Avg": 15.0,
+                "SubIndex": 7.0
+            },
+            "CO": {
+                "Avg": 55.0,
+                "SubIndex": 47.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 21.0
+            }
+        },
+        "AQI_Value": "305",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Pusa_Delhi_DPCC",
+        "RSS_Station_Name": "Pusa, Delhi - DPCC",
+        "Latitude": "28.639652",
+        "Longitude": "77.146275",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 331.0,
+                "SubIndex": 316.0
+            },
+            "PM10": {
+                "Avg": 288.0,
+                "SubIndex": 169.0
+            },
+            "NO2": {
+                "Avg": 110.0,
+                "SubIndex": 77.0
+            },
+            "NH3": {
+                "Avg": 10.0,
+                "SubIndex": 12.0
+            },
+            "SO2": {
+                "Avg": 8.0,
+                "SubIndex": 3.0
+            },
+            "CO": {
+                "Avg": 69.0,
+                "SubIndex": 58.0
+            },
+            "OZONE": {
+                "Avg": 19.0,
+                "SubIndex": 17.0
+            }
+        },
+        "AQI_Value": "331",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Pusa_Delhi_DPCC",
+        "RSS_Station_Name": "Pusa, Delhi - IMD",
+        "Latitude": "28.636110",
+        "Longitude": "77.173332",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 273.0,
+                "SubIndex": 210.0
+            },
+            "PM10": {
+                "Avg": 200.0,
+                "SubIndex": 138.0
+            },
+            "NO2": {
+                "Avg": 59.0,
+                "SubIndex": 48.0
+            },
+            "CO": {
+                "Avg": 68.0,
+                "SubIndex": 31.0
+            },
+            "OZONE": {
+                "Avg": 17.0,
+                "SubIndex": 9.0
+            }
+        },
+        "AQI_Value": "273",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "R_K_Puram_Delhi",
+        "RSS_Station_Name": "R K Puram, Delhi - DPCC",
+        "Latitude": "28.563262",
+        "Longitude": "77.186937",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 316.0,
+                "SubIndex": 342.0
+            },
+            "PM10": {
+                "Avg": 239.0,
+                "SubIndex": 155.0
+            },
+            "NO2": {
+                "Avg": 91.0,
+                "SubIndex": 97.0
+            },
+            "NH3": {
+                "Avg": 8.0,
+                "SubIndex": 7.0
+            },
+            "SO2": {
+                "Avg": 5.0,
+                "SubIndex": 4.0
+            },
+            "CO": {
+                "Avg": 53.0,
+                "SubIndex": 44.0
+            },
+            "OZONE": {
+                "Avg": 27.0,
+                "SubIndex": 20.0
+            }
+        },
+        "AQI_Value": "316",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Rohini_Delhi",
+        "RSS_Station_Name": "Rohini, Delhi - DPCC",
+        "Latitude": "28.732528",
+        "Longitude": "77.119920",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 322.0,
+                "SubIndex": 357.0
+            },
+            "PM10": {
+                "Avg": 250.0,
+                "SubIndex": 224.0
+            },
+            "NO2": {
+                "Avg": 61.0,
+                "SubIndex": 51.0
+            },
+            "NH3": {
+                "Avg": 15.0,
+                "SubIndex": 16.0
+            },
+            "SO2": {
+                "Avg": 22.0,
+                "SubIndex": 17.0
+            },
+            "CO": {
+                "Avg": 58.0,
+                "SubIndex": 40.0
+            },
+            "OZONE": {
+                "Avg": 23.0,
+                "SubIndex": 35.0
+            }
+        },
+        "AQI_Value": "322",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Shadipur_Delhi",
+        "RSS_Station_Name": "Shadipur, Delhi - CPCB",
+        "Latitude": "28.6514781",
+        "Longitude": "77.1473105",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 239.0,
+                "SubIndex": 242.0
+            },
+            "PM10": {
+                "Avg": 246.0,
+                "SubIndex": 148.0
+            },
+            "NO2": {
+                "Avg": 73.0,
+                "SubIndex": 70.0
+            },
+            "NH3": {
+                "Avg": 11.0,
+                "SubIndex": 11.0
+            },
+            "SO2": {
+                "Avg": 14.0,
+                "SubIndex": 16.0
+            },
+            "CO": {
+                "Avg": 55.0,
+                "SubIndex": 38.0
+            },
+            "OZONE": {
+                "Avg": 10.0,
+                "SubIndex": 9.0
+            }
+        },
+        "AQI_Value": "246",
+        "Prominent_Pollutant": "PM10"
+    },
+    {
+        "Station_ID": "Sirifort_Delhi",
+        "RSS_Station_Name": "Sirifort, Delhi - CPCB",
+        "Latitude": "28.5504249",
+        "Longitude": "77.2159377",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 309.0,
+                "SubIndex": 322.0
+            },
+            "PM10": {
+                "Avg": 228.0,
+                "SubIndex": 173.0
+            },
+            "NO2": {
+                "Avg": 52.0,
+                "SubIndex": 47.0
+            },
+            "NH3": {
+                "Avg": 10.0,
+                "SubIndex": 10.0
+            },
+            "SO2": {
+                "Avg": 25.0,
+                "SubIndex": 25.0
+            },
+            "CO": {
+                "Avg": 56.0,
+                "SubIndex": 32.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 14.0
+            }
+        },
+        "AQI_Value": "309",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Sonia_Vihar_Delhi",
+        "RSS_Station_Name": "Sonia Vihar, Delhi - DPCC",
+        "Latitude": "28.710508",
+        "Longitude": "77.249485",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 301.0,
+                "SubIndex": 325.0
+            },
+            "PM10": {
+                "Avg": 221.0,
+                "SubIndex": 191.0
+            },
+            "NO2": {
+                "Avg": 56.0,
+                "SubIndex": 45.0
+            },
+            "NH3": {
+                "Avg": 9.0,
+                "SubIndex": 9.0
+            },
+            "SO2": {
+                "Avg": 17.0,
+                "SubIndex": 15.0
+            },
+            "CO": {
+                "Avg": 89.0,
+                "SubIndex": 74.0
+            },
+            "OZONE": {
+                "Avg": 28.0,
+                "SubIndex": 42.0
+            }
+        },
+        "AQI_Value": "301",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Sri_Aurobindo_Marg_Delhi",
+        "RSS_Station_Name": "Sri Aurobindo Marg, Delhi - DPCC",
+        "Latitude": "28.531346",
+        "Longitude": "77.190156",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 296.0,
+                "SubIndex": 312.0
+            },
+            "PM10": {
+                "Avg": 205.0,
+                "SubIndex": 167.0
+            },
+            "NO2": {
+                "Avg": 56.0,
+                "SubIndex": 35.0
+            },
+            "NH3": {
+                "Avg": 7.0,
+                "SubIndex": 7.0
+            },
+            "SO2": {
+                "Avg": 10.0,
+                "SubIndex": 6.0
+            },
+            "CO": {
+                "Avg": 68.0,
+                "SubIndex": 57.0
+            },
+            "OZONE": {
+                "Avg": 22.0,
+                "SubIndex": 26.0
+            }
+        },
+        "AQI_Value": "296",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Vivek_Vihar_Delhi",
+        "RSS_Station_Name": "Vivek Vihar, Delhi - DPCC",
+        "Latitude": "28.672342",
+        "Longitude": "77.315260",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 324.0,
+                "SubIndex": 321.0
+            },
+            "PM10": {
+                "Avg": 243.0,
+                "SubIndex": 177.0
+            },
+            "NO2": {
+                "Avg": 78.0,
+                "SubIndex": 69.0
+            },
+            "NH3": {
+                "Avg": 13.0,
+                "SubIndex": 13.0
+            },
+            "SO2": {
+                "Avg": 15.0,
+                "SubIndex": 9.0
+            },
+            "CO": {
+                "Avg": 78.0,
+                "SubIndex": 58.0
+            },
+            "OZONE": {
+                "Avg": 14.0,
+                "SubIndex": 13.0
+            }
+        },
+        "AQI_Value": "324",
+        "Prominent_Pollutant": "PM2.5"
+    },
+    {
+        "Station_ID": "Wazirpur_Delhi",
+        "RSS_Station_Name": "Wazirpur, Delhi - DPCC",
+        "Latitude": "28.699793",
+        "Longitude": "77.165453",
+        "Last_Update": "09-12-2025 06:00:00",
+        "Pollutants": {
+            "PM2.5": {
+                "Avg": 321.0,
+                "SubIndex": 327.0
+            },
+            "PM10": {
+                "Avg": 295.0,
+                "SubIndex": 200.0
+            },
+            "NO2": {
+                "Avg": 84.0,
+                "SubIndex": 71.0
+            },
+            "NH3": {
+                "Avg": 11.0,
+                "SubIndex": 12.0
+            },
+            "SO2": {
+                "Avg": 14.0,
+                "SubIndex": 7.0
+            },
+            "CO": {
+                "Avg": 65.0,
+                "SubIndex": 72.0
+            },
+            "OZONE": {
+                "Avg": 27.0,
+                "SubIndex": 28.0
+            }
+        },
+        "AQI_Value": "321",
+        "Prominent_Pollutant": "PM2.5"
+    }
+]
